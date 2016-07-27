@@ -7,8 +7,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome to my home "page"!<br>
-Its intended mostly for hosting my pet webapps and it won't be neither stable nor pretty, sorry about that :)<br>
-If you want to know more, please visit my blog: <a href="http://howtotrainyourjee.wordpress.com/">howtotrainyourjee.wordpress.com</a>
+Welcome to EndoMinion at gvaireth.org!<br><br>
+You can see all your <b>Workouts</b> enriched with:
+<ul>
+<li>Ranking by duration</li>
+<li>Ranking by distance</li>
+<li>Ranking by average speed</li>
+</ul>
+
+And <b>Statistics</b> including:
+<ul>
+<li>All Activities Summary </li>
+<li>Summary by Activity </li>
+<li>Top Distance Workouts </li>
+<li>Top Duration  Workouts </li>
+<li>Top Average Speed Workouts </li>
+</ul>
+
+Check out the project source at <a href="https://github.com/Gvaireth/EndoMinion">GitHub</a> <br>
+And my Java <a href="http://howtotrainyourjee.wordpress.com/">Blog</a><br> 
 </body>
 </html>

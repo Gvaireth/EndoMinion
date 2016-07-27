@@ -1,0 +1,46 @@
+@CHARSET "ISO-8859-1";
+
+#wrap { 
+	width: 1200px; 
+	margin: 0 auto; 
+}
+
+.mainLink a{
+    font-size: 20px; 
+}
+
+#title{
+    font-size: 50px; 
+}
+
+#subtitle{
+    font-size: 20px; 
+    color:#666666;
+}
+
+.header{
+    font-size: 30px; 
+}
+
+#bla{
+    font-size: 50px; 
+}
+
+
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
+
+.mainTable {
+    border: 1px solid grey;
+    	padding: 5px;
+    		border-collapse: collapse;
+}
+
+.innerTable {
+border:  0px solid black;
+border-collapse: collapse;
+}
+
+

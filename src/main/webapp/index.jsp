@@ -5,35 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Gvaireth's home "page"</title>
+<title>EndoMinion</title>
+<link rel="stylesheet" href="/home/css/style.css">
 </head>
 
-<style>
-
-.mainTable {
-    border: 1px solid grey;
-    	padding: 5px;
-    		border-collapse: collapse;
-}
-
-.innerTable {
-border:  0px solid black;
-border-collapse: collapse;
-}
-
-a:link {
-    text-decoration: none;
-}
-
-a:visited {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-</style>
 <body>
 <center>
 <table class="mainTable">
@@ -43,26 +18,34 @@ a:hover {
 <img id="logo" src="/home/img/avatar.jpg"  style="border:0;">
 </a>
 </td>
-<td style="font-size:30px;text-align: center" class="mainTable"width="800">Gvaireth's home "page"</td>
+<td class="mainTable" width="800">
+<div  id="title">EndoMinion</div><div id="subtitle">Endomondo assistant, tools and statistics</div>
+</td>
 </tr>
 <tr > 
 <td class="mainTable" style="text-align: center;vertical-align: top;" height="500px" >
+<a href="/home/index?page=about">About</a><br>
+<a href="/home/index?page=workouts">Workouts</a><br>
+<a href="/home/index?page=statistics">Statistics</a><br>
 <a href="http://howtotrainyourjee.wordpress.com/">Blog</a><br> 
-<a href="/home/?page=about">About</a><br>
-<a href="/home/?page=prototypes">Prototypes</a><br>
-<!--  <a href="/home/?page=links">Links</a><br>-->
+<!-- 
+<a href="/home/index?page=prototypes">Prototypes</a><br>
+ <a href="/home/?page=links">Links</a><br>-->
 </td >
 <td class="mainTable" style="vertical-align: top;">
    <c:choose>
-        <c:when test="${param.page=='prototypes'}">
-        <jsp:include page="/prototypes.jsp" />
-		</c:when>
-        <c:when test="${param.page=='about'}">
+       <c:when test="${param.page=='about'}">
          <jsp:include page="/about.jsp" /> 
-        </c:when>
-            <c:when test="${param.page=='links'}">
-         <jsp:include page="/links.jsp" />  
-        </c:when>
+         </c:when>
+         
+        <c:when test="${param.page=='workouts'}">
+        <jsp:include page="/workouts.jsp" />
+		</c:when>
+    
+     <c:when test="${param.page=='statistics'}">
+        <jsp:include page="/statistics.jsp" />
+		</c:when>
+        
         <c:otherwise>
         <jsp:include page="/about.jsp" /> 
         </c:otherwise>
