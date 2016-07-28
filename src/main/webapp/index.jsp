@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>EndoMinion</title>
 <link rel="stylesheet" href="/home/css/style.css">
+<link rel="icon" type="image/png" href="/home/img/favicon.png">
 </head>
 
 <body>
