@@ -25,6 +25,8 @@ And <b>Statistics</b> including:
 </ul>
 
 Check out the project source at <a href="https://github.com/Gvaireth/EndoMinion">GitHub</a> <br>
-And my Java <a href="http://howtotrainyourjee.wordpress.com/">Blog</a><br> 
+Stack: Java 8, Spring 4.3, Maven<br>
+
+
 </body>
 </html>

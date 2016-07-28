@@ -220,5 +220,4 @@ public class StatisticsCalculator {
 		total.setCalories(calories);
 		return total;
 	}
-
 }

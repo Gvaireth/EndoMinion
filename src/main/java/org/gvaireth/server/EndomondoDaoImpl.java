@@ -22,9 +22,6 @@ public class EndomondoDaoImpl implements EndomondoDao {
 	@Value("${endo.pass}")
 	private String endoPass;
 
-	// @Value("${systemProperties.ENDO_EMAIL}")
-	private String sysTest;
-
 	public EndomondoDaoImpl() {
 		// TODO Auto-generated constructor stub
 	}
@@ -42,7 +39,6 @@ public class EndomondoDaoImpl implements EndomondoDao {
 	public void updateData() {
 
 		System.out.println("fetching workouts for " + endoEmail);
-		System.out.println("systest2: " + sysTest);
 		EndomondoSession session = new EndomondoSession(endoEmail, endoPass);
 		try {
 			session.login();

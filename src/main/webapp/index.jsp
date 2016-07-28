@@ -54,7 +54,7 @@
 </td>
 </tr>
 </table>
-
+Copyright (c) 2016 <a href="http://howtotrainyourjee.wordpress.com/author/">Gvaireth</a><br> 
 </center>
 </body>
 
