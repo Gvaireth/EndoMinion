@@ -28,6 +28,7 @@
 <a href="/home/index?page=workouts">Workouts</a><br>
 <a href="/home/index?page=statistics">Statistics</a><br>
 <a href="http://howtotrainyourjee.wordpress.com/">Blog</a><br> 
+<a href="/home/index?page=experiments">Experiments</a><br>
 <!-- 
 <a href="/home/index?page=prototypes">Prototypes</a><br>
  <a href="/home/?page=links">Links</a><br>-->
@@ -44,6 +45,10 @@
     
      <c:when test="${param.page=='statistics'}">
         <jsp:include page="/statistics.jsp" />
+		</c:when>
+		
+		 <c:when test="${param.page=='experiments'}">
+        <jsp:include page="/experiments.jsp" /> 
 		</c:when>
         
         <c:otherwise>
