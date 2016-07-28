@@ -49,7 +49,7 @@
 		</c:when>
 		
 		 <c:when test="${param.page=='experiments'}">
-        <jsp:include page="/experiments.jsp" /> 
+       <%@include  file="/experiments.html" %>
 		</c:when>
         
         <c:otherwise>
