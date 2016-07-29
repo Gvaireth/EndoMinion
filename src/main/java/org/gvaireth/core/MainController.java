@@ -2,8 +2,12 @@ package org.gvaireth.core;
 
 import java.util.Date;
 
+import org.gvaireth.model.SimpleData;
 import org.gvaireth.server.EndoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,6 +41,13 @@ public class MainController {
 	public ModelAndView rawData(Model model) {
 		System.out.println("raw");
 		return new ModelAndView("raw.jsp");
+	}
+
+	@RequestMapping(value = "/getWorkouts", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<SimpleData> getWorkouts() {
+		System.out.println("/getWorkouts");
+		SimpleData data = new SimpleData("one", "two");
+		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 
 	// @RequestMapping(value = "/workouts", method = RequestMethod.GET)

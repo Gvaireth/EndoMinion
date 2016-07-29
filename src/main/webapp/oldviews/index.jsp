@@ -48,8 +48,6 @@
 							<jsp:include page="/oldviews/statistics.jsp" />
 						</c:when>
 
-
-
 						<c:otherwise>
 							<jsp:include page="/oldviews/about.jsp" />
 						</c:otherwise>

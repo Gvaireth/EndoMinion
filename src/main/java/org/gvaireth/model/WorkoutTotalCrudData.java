@@ -9,7 +9,8 @@ public class WorkoutTotalCrudData implements Comparable<WorkoutTotalCrudData> {
 	private Long duration;
 	private Double distance;
 	private Long calories;
-	private Sport sportEnum;
+	private Sport sportEnum = Sport.RUNNING;
+	private String sport;
 
 	public Sport getSportEnum() {
 		return sportEnum;
@@ -17,6 +18,7 @@ public class WorkoutTotalCrudData implements Comparable<WorkoutTotalCrudData> {
 
 	public void setSportEnum(Sport sportEnum) {
 		this.sportEnum = sportEnum;
+		this.sport = sportEnum != null ? sportEnum.description() : null;
 	}
 
 	public Integer getWorkoutsNo() {
@@ -52,10 +54,11 @@ public class WorkoutTotalCrudData implements Comparable<WorkoutTotalCrudData> {
 	}
 
 	public String getSport() {
-		return sportEnum.description();
+		return sport;
 	}
 
 	public void setSport(String sport) {
+		this.sport = sport;
 	}
 
 	public String getReadableDuration() {
