@@ -9,7 +9,7 @@
 <script
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script
-	src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 <script src="/home/script/app.js"></script>
 </head>
 
@@ -29,12 +29,12 @@
 			<tr>
 				<td class="mainTable"
 					style="text-align: center; vertical-align: top;" height="500px">
-					<a href="#">About</a><br> <a href="#workouts">Workouts</a><br>
+					<a href="#about">About</a><br> 
+					<a href="#workouts">Workouts</a><br>
 					<a href="#statistics">Statistics</a><br> 
 					<a href="http://howtotrainyourjee.wordpress.com/">Blog</a><br> 
 					<a href="/home/old?page=about">Old version</a><br>
-				<td class="mainTable" style="vertical-align: top;">inner
-					content<br> msg: {{message}}
+				<td class="mainTable" style="vertical-align: top;">
 					<div ng-view></div>
 				</td>
 			</tr>

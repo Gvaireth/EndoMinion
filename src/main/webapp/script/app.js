@@ -1,4 +1,4 @@
-var endoMinion = angular.module('endoMinion', []);
+var endoMinion = angular.module('endoMinion', ['ngRoute']);
  endoMinion.controller('mainCtrl', function($scope) {
  $scope.message='message from controler';
  });
@@ -10,17 +10,17 @@ var endoMinion = angular.module('endoMinion', []);
 	endoMinion.controller('statisticsCtrl', function($scope) {
 		$scope.message = 'Statistics page.';
 	});
-/*
+
 endoMinion.config(function($routeProvider) {
-	$routeProvider.when('/', {
-		templateUrl : '/about.html',
+	$routeProvider.when('/about', {
+		templateUrl : '/home/about.html',
 		controller : 'mainCtrl'
 	}).when('/workouts', {
-		templateUrl : '/workouts.html',
+		templateUrl : '/home/workouts.html',
 		controller : 'workoutsCtrl'
 	}).when('/statistics', {
-		templateUrl : '/statistics.html',
+		templateUrl : '/home/statistics.html',
 		controller : 'statisticsCtrl'
 	});
 });
-*/
+
