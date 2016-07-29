@@ -1,43 +1,47 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html ng-app="endoMinion">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>EndoMinion</title>
 <link rel="stylesheet" href="/home/css/style.css">
 <link rel="icon" type="image/png" href="/home/img/favicon.png">
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="/home/script/app.js"></script>
 </head>
 
-<body>
-<center>
-<table class="mainTable">
-<tr >
-<td width="186" height="186" class="mainTable">
- <a href="/home/" style="width:0px;height:0px;border:0;"> 
-<img id="logo" src="/home/img/avatar.jpg"  style="border:0;">
-</a>
-</td>
-<td class="mainTable" width="800">
-<div  id="title">EndoMinion</div><div id="subtitle">Endomondo assistant, tools and statistics</div>
-</td>
-</tr>
-<tr > 
-<td class="mainTable" style="text-align: center;vertical-align: top;" height="500px" >
-<a href="/home/index.html">About</a><br>
-<a href="/home/index.html">Workouts</a><br>
-<a href="/home/index.html">Statistics</a><br>
-<a href="http://howtotrainyourjee.wordpress.com/">Blog</a><br> 
-<a href="/home/index.html">Experiments</a><br>
-<a href="/home/old?page=about">Old version</a><br>
-
-<td class="mainTable" style="vertical-align: top;">
-inner content
-
-</td>
-</tr>
-</table>
-Copyright (c) 2016 <a href="http://howtotrainyourjee.wordpress.com/author/">Gvaireth</a><br> 
-</center>
+<body ng-controller='mainCtrl'>
+	<center>
+		<table class="mainTable">
+			<tr>
+				<td width="186" height="186" class="mainTable"><a href="/home/"
+					style="width: 0px; height: 0px; border: 0;"> <img id="logo"
+						src="/home/img/avatar.jpg" style="border: 0;">
+				</a></td>
+				<td class="mainTable" width="800">
+					<div id="title">EndoMinion</div>
+					<div id="subtitle">Endomondo assistant, tools and statistics</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="mainTable"
+					style="text-align: center; vertical-align: top;" height="500px">
+					<a href="#">About</a><br> <a href="#workouts">Workouts</a><br>
+					<a href="#statistics">Statistics</a><br> 
+					<a href="http://howtotrainyourjee.wordpress.com/">Blog</a><br> 
+					<a href="/home/old?page=about">Old version</a><br>
+				<td class="mainTable" style="vertical-align: top;">inner
+					content<br> msg: {{message}}
+					<div ng-view></div>
+				</td>
+			</tr>
+		</table>
+		Copyright (c) 2016 <a
+			href="http://howtotrainyourjee.wordpress.com/author/">Gvaireth</a><br>
+	</center>
 </body>
 
 </html>
