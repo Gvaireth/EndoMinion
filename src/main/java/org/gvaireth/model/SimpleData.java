@@ -1,5 +1,6 @@
 package org.gvaireth.model;
 
+//testing
 public class SimpleData {
 	private String first;
 	private String second;
