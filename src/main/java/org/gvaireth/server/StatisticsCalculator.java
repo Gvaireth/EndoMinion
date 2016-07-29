@@ -66,7 +66,6 @@ public class StatisticsCalculator {
 		setTopDuration(workouts, statistics);
 		setTopDistance(workouts, statistics);
 		setTopSpeedAvg(workouts, statistics);
-		System.out.println(statistics);
 		return statistics;
 	}
 

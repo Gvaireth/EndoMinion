@@ -25,11 +25,12 @@
 </tr>
 <tr > 
 <td class="mainTable" style="text-align: center;vertical-align: top;" height="500px" >
-<a href="/home/index?page=about">About</a><br>
-<a href="/home/index?page=workouts">Workouts</a><br>
-<a href="/home/index?page=statistics">Statistics</a><br>
+<a href="/home/old?page=about">About</a><br>
+<a href="/home/old?page=workouts">Workouts</a><br>
+<a href="/home/old?page=statistics">Statistics</a><br>
 <a href="http://howtotrainyourjee.wordpress.com/">Blog</a><br> 
-<a href="/home/index?page=experiments">Experiments</a><br>
+<a href="/home/old?page=experiments">Experiments</a><br>
+<a href="/home/index.html">New version</a><br>
 <!-- 
 <a href="/home/index?page=prototypes">Prototypes</a><br>
  <a href="/home/?page=links">Links</a><br>-->
@@ -37,15 +38,15 @@
 <td class="mainTable" style="vertical-align: top;">
    <c:choose>
        <c:when test="${param.page=='about'}">
-         <jsp:include page="/about.jsp" /> 
+         <jsp:include page="/oldviews/about.jsp" /> 
          </c:when>
          
         <c:when test="${param.page=='workouts'}">
-        <jsp:include page="/workouts.jsp" />
+        <jsp:include page="/oldviews/workouts.jsp" />
 		</c:when>
     
      <c:when test="${param.page=='statistics'}">
-        <jsp:include page="/statistics.jsp" />
+        <jsp:include page="/oldviews/statistics.jsp" />
 		</c:when>
 		
 		 <c:when test="${param.page=='experiments'}">
@@ -53,7 +54,7 @@
 		</c:when>
         
         <c:otherwise>
-        <jsp:include page="/about.jsp" /> 
+        <jsp:include page="/oldviews/about.jsp" /> 
         </c:otherwise>
     </c:choose>
 

@@ -17,10 +17,10 @@ public class MainController {
 	@Autowired
 	private EndoService service;// = new EndoService();;
 
-	@RequestMapping("/index*")
+	@RequestMapping("/old")
 	public ModelAndView helloWorld(Model model) {
 		String page = "foo";
-		System.out.println("fron controller: " + page);
+		System.out.println("front controller: " + page);
 		model.addAttribute("app", "home");
 		model.addAttribute("data", service.getWorkouts());
 		model.addAttribute("size", service.getWorkouts().size());
@@ -30,7 +30,7 @@ public class MainController {
 		model.addAttribute("topDistance", service.getStatistics().getTopDistance());
 		model.addAttribute("topSpeedAvg", service.getStatistics().getTopSpeedAvg());
 		System.out.println("displaying page: " + page);
-		return new ModelAndView("index.jsp");
+		return new ModelAndView("/oldviews/index.jsp");
 	}
 
 	@RequestMapping("/raw")
