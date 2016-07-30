@@ -8,26 +8,16 @@ endoMinion.controller('mainCtrl', function($scope) {
 endoMinion.factory('endoService', function($http, $rootScope) {
 	var service = this;
 	return {
-		getWorkouts : function() {
-			return "workouts list";
-		},
-		getWorkouts2 : function() {
-			return $http.get('/home/getWorkouts').then(function(result) {
-				// this works but its ugly
-				 $rootScope.serverResponse=result.data;
-				window.alert('server said: ' + result.data.first);
-			});
+		getSimpleData : function() {
+			return $http.get('/home/getSimpleData');
 		}
 	}
 });
 
 endoMinion.controller('workoutsCtrl', function($scope, endoService) {
-	$scope.message = 'Workouts page.';
-	$scope.workouts = endoService.getWorkouts();
-	endoService.getWorkouts2();
-	/*.then(function(result) {
-		$scope.serverResponse = result;
-	});*/
+	endoService.getSimpleData().then(function(result) {
+		$scope.serverResponse = result.data;
+	});
 });
 
 endoMinion.controller('statisticsCtrl', function($scope) {

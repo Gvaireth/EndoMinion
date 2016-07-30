@@ -43,8 +43,8 @@ public class MainController {
 		return new ModelAndView("raw.jsp");
 	}
 
-	@RequestMapping(value = "/getWorkouts", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<SimpleData> getWorkouts() {
+	@RequestMapping(value = "/getSimpleData", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<SimpleData> getSimpleData() {
 		System.out.println("/getWorkouts");
 		SimpleData data = new SimpleData("one", "two");
 		return new ResponseEntity<>(data, HttpStatus.OK);
