@@ -1,4 +1,40 @@
 <div>
-workouts will be here<br><br>
-server response: {{serverResponse}}
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    	padding: 3px;
+}
+</style>
+	{{status}}<br> <br>
+
+	<table style="border: 1px solid black; border-collapse: collapse; padding: 3px;">
+	
+	<tr>
+	<td>no.</td>
+	<td>Start time</td>
+	<td>Duration</td>
+	<td>Duration<br>rank #</td>
+	<td>Distance<br>km</td>
+	<td>Distance<br>rank #</td>
+	<td>Calories</td>
+	<td>Avg speed<br>km/h</td>
+	<td>Avg speed<br>rank #</td>
+	<td>Activity</td>
+	</tr>
+	
+		<tr ng-repeat="workout in workouts">
+			<td>{{workout.id}}</td>
+			<td>{{workout.readableStartTime}}</td>
+			<td>{{workout.readableDuration}}</td>
+			<td>{{workout.durationRank}}</td>
+			<td>{{workout.distance}}</td>
+			<td>{{workout.distanceRank}}</td>
+			<td>{{workout.calories}}</td>
+			<td>{{workout.speedAvg}}</td>
+			<td>{{workout.speedAvgRank}}</td>
+			<td>{{workout.sport}}</td>
+		</tr>
+	</table>
+
 </div>

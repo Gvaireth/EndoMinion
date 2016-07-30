@@ -33,16 +33,19 @@ public class EndoServiceImpl implements EndoService, ServletContextAware {
 
 	public List<WorkoutCrudData> getWorkouts() {
 		List<Workout> rawWorkouts = cache.getWorkouts();
-		List<WorkoutCrudData> converted = new ArrayList<WorkoutCrudData>(rawWorkouts.size());
+		List<WorkoutCrudData> convertedList = new ArrayList<WorkoutCrudData>(rawWorkouts.size());
+		long id = rawWorkouts.size();
 		for (Workout rawWorkout : rawWorkouts) {
 			if (rawWorkout != null) {
-				converted.add(workoutConverter.convert(rawWorkout));
+				WorkoutCrudData converted = workoutConverter.convert(rawWorkout);
+				converted.setId(id--);
+				convertedList.add(converted);
 			} else {
 				System.out.println("null workout");
 			}
 		}
-		statisticsCalculaor.calculateRanks(converted);
-		return converted;
+		statisticsCalculaor.calculateRanks(convertedList);
+		return convertedList;
 	}
 
 	public List<Workout> getRawWorkouts() {

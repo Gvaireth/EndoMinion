@@ -1,8 +1,10 @@
 package org.gvaireth.core;
 
 import java.util.Date;
+import java.util.List;
 
 import org.gvaireth.model.SimpleData;
+import org.gvaireth.model.WorkoutCrudData;
 import org.gvaireth.server.EndoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,8 +47,15 @@ public class MainController {
 
 	@RequestMapping(value = "/getSimpleData", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<SimpleData> getSimpleData() {
-		System.out.println("/getWorkouts");
+		System.out.println("/getSimpleData");
 		SimpleData data = new SimpleData("one", "two");
+		return new ResponseEntity<>(data, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/getWorkouts", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<WorkoutCrudData>> getWorkouts() {
+		System.out.println("/getWorkouts");
+		List<WorkoutCrudData> data = service.getWorkouts();
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 

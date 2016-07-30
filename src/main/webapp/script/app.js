@@ -10,13 +10,22 @@ endoMinion.factory('endoService', function($http, $rootScope) {
 	return {
 		getSimpleData : function() {
 			return $http.get('/home/getSimpleData');
+		},
+		getWorkouts : function() {
+			return $http.get('/home/getWorkouts');
 		}
 	}
 });
 
 endoMinion.controller('workoutsCtrl', function($scope, endoService) {
+	$scope.status='Loading Workouts...';
 	endoService.getSimpleData().then(function(result) {
 		$scope.serverResponse = result.data;
+	});
+	
+	endoService.getWorkouts().then(function(result) {
+		$scope.workouts = result.data;
+		$scope.status='Workouts';
 	});
 });
 

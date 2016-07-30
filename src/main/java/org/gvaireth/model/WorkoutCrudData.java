@@ -8,6 +8,7 @@ import com.moomeen.endo2java.model.Sport;
 
 public class WorkoutCrudData {
 
+	private long id;
 	private Date startTime;
 	private Long duration;
 	private Double distance;
@@ -17,6 +18,14 @@ public class WorkoutCrudData {
 	private Integer durationRank;
 	private Integer distanceRank;
 	private Integer speedAvgRank;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public Integer getSpeedAvgRank() {
 		return speedAvgRank;
