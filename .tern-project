@@ -1,4 +1,5 @@
 {
+  "ecmaVersion": 5,
   "plugins": {
     "guess-types": {
       
@@ -10,13 +11,7 @@
       
     }
   },
-  "ecmaVersion": 5,
   "libs": [
     "browser"
-  ],
-  "ide": {
-    "scriptPaths": [
-      
-    ]
-  }
+  ]
 }

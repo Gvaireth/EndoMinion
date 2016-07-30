@@ -43,4 +43,7 @@ border:  0px solid black;
 border-collapse: collapse;
 }
 
-
+    .myGrid {
+        width: 1200px;
+        height: 400px;
+      }

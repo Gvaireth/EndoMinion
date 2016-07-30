@@ -1,4 +1,4 @@
-var endoMinion = angular.module('endoMinion', [ 'ngRoute' ]);
+var endoMinion = angular.module('endoMinion', [ 'ngRoute', 'ui.grid']);
 
 endoMinion.controller('mainCtrl', function($scope) {
 	$scope.message = 'message from controler';
@@ -18,6 +18,15 @@ endoMinion.factory('endoService', function($http, $rootScope) {
 });
 
 endoMinion.controller('workoutsCtrl', function($scope, endoService) {
+	
+	/*$scope.gridOptions = { 
+            columnDefs: [{ field: 'id', displayName: 'no', width: 90 },
+                         { field: 'readableStartTime', displayName: 'Start time', width: 80 }]}*/
+	
+    $scope.gridOptions = {
+    	      enableColumnResizing: true
+    	    };
+	
 	$scope.status='Loading Workouts...';
 	endoService.getSimpleData().then(function(result) {
 		$scope.serverResponse = result.data;
