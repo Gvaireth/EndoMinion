@@ -1,15 +1,17 @@
 <div>
-<style>
+
+	{{status}}<br> <br>
+	New view (Angular UI Grid)
+      <div ui-grid="gridOptions" class="myGrid"></div>
+    </div>
+<br> <br>Old view (pure Angular)
+ <style>
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     	padding: 3px;
 }
 </style>
-	{{status}}<br> <br>
-      <div ui-grid="{ data: workouts }" class="myGrid"></div>
-    </div>
- 
 	<table style="border: 1px solid black; border-collapse: collapse; padding: 3px;">
 	
 	<tr>
