@@ -9,6 +9,7 @@ import com.moomeen.endo2java.model.Sport;
 public class WorkoutCrudData {
 
 	private long id;
+	private long endomondoId;
 	private Date startTime;
 	private Long duration;
 	private Double distance;
@@ -120,6 +121,14 @@ public class WorkoutCrudData {
 
 	public String getReadableStartTime() {
 		return Util.formatDate(startTime);
+	}
+
+	public long getEndomondoId() {
+		return endomondoId;
+	}
+
+	public void setEndomondoId(long endomondoId) {
+		this.endomondoId = endomondoId;
 	}
 
 }

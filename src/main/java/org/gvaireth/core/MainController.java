@@ -56,6 +56,7 @@ public class MainController {
 	public ResponseEntity<List<WorkoutCrudData>> getWorkouts() {
 		System.out.println("/getWorkouts");
 		List<WorkoutCrudData> data = service.getWorkouts();
+		service.getWorkoutDetails(0);
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 

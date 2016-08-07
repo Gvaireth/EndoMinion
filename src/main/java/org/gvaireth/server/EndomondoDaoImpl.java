@@ -2,6 +2,10 @@ package org.gvaireth.server;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.gvaireth.core.SessionAttributes;
+import org.gvaireth.core.Util;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -43,6 +47,8 @@ public class EndomondoDaoImpl implements EndomondoDao {
 		try {
 			session.login();
 			workouts = session.getWorkouts(1000);
+			HttpSession httpSession = Util.session();
+			httpSession.setAttribute(SessionAttributes.ENDOMONDO_SESSION.getName(), session);
 		} catch (InvocationException e) {
 			System.out.println("well");
 		}
