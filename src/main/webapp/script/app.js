@@ -12,6 +12,7 @@ endoMinion.controller('statisticsCtrl', function($scope) {
 endoMinion.controller('workoutDetailsCtrl', function($scope,$location) {
 	$scope.message = 'Workout Details page.';
 	$scope.id=$location.search().id;
+
 });
 
 

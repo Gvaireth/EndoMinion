@@ -1,4 +1,4 @@
-endoMinion.controller('workoutsCtrl', function($scope, endoService) {
+endoMinion.controller('workoutsCtrl', function($scope,$rootScope, endoService) {
 
 	$scope.visibleTable = true;
 	$scope.visibleGrid = false;
@@ -13,6 +13,10 @@ endoMinion.controller('workoutsCtrl', function($scope, endoService) {
 	}
 	$scope.clicktest = function() {
 		window.alert('click!')
+	}
+	
+	$scope.setCurrentWorkout = function(workout) {
+		$rootScope.currentWorkout=workout;
 	}
 
 	$scope.gridOptions = {
