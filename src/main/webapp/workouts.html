@@ -1,26 +1,20 @@
-<!--  <button ng-click="showTable()">Table view</button>
-<button ng-click="showGrid()">Grid view</button>-->
+<head>
+<link rel="stylesheet" href="/home/css/workouts.css">
+</head>
+
 {{status}}
 <br><br>
 <a href="" ng-click="showTable()">Table view</a> |
 <a href="" ng-click="showGrid()">Grid view</a>
 <br>
-<div ng-if="visibleGrid">
 
+<div ng-if="visibleGrid">
 	<div ui-grid="gridOptions" class="myGrid"></div>
 </div>
+
+
 <div ng-if="visibleTable">
-
-	<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    	padding: 3px;
-}
-</style>
-	<table
-		style="border: 1px solid black; border-collapse: collapse; padding: 3px;">
-
+	<table>
 		<tr>
 			<td>no.</td>
 			<td>Start time</td>
@@ -38,7 +32,6 @@ table, th, td {
 			</td>
 			<td>Activity</td>
 		</tr>
-
 		<tr ng-repeat="workout in workouts">
 			<td>{{workout.id}}</td>
 			<td>{{workout.readableStartTime}}</td>
@@ -52,5 +45,4 @@ table, th, td {
 			<td>{{workout.sport}}</td>
 		</tr>
 	</table>
-
 </div>
