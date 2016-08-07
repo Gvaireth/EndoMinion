@@ -1,32 +1,44 @@
-<div>
+<!--  <button ng-click="showTable()">Table view</button>
+<button ng-click="showGrid()">Grid view</button>-->
+{{status}}
+<br><br>
+<a href="" ng-click="showTable()">Table view</a> |
+<a href="" ng-click="showGrid()">Grid view</a>
+<br>
+<div ng-if="visibleGrid">
 
-	{{status}}<br> <br>
-	New view (Angular UI Grid)
-      <div ui-grid="gridOptions" class="myGrid"></div>
-    </div>
-<br> <br>Old view (pure Angular)
- <style>
+	<div ui-grid="gridOptions" class="myGrid"></div>
+</div>
+<div ng-if="visibleTable">
+
+	<style>
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     	padding: 3px;
 }
 </style>
-	<table style="border: 1px solid black; border-collapse: collapse; padding: 3px;">
-	
-	<tr>
-	<td>no.</td>
-	<td>Start time</td>
-	<td>Duration</td>
-	<td>Duration<br>rank #</td>
-	<td>Distance<br>km</td>
-	<td>Distance<br>rank #</td>
-	<td>Calories</td>
-	<td>Avg speed<br>km/h</td>
-	<td>Avg speed<br>rank #</td>
-	<td>Activity</td>
-	</tr>
-	
+	<table
+		style="border: 1px solid black; border-collapse: collapse; padding: 3px;">
+
+		<tr>
+			<td>no.</td>
+			<td>Start time</td>
+			<td>Duration</td>
+			<td>Duration<br>rank #
+			</td>
+			<td>Distance<br>km
+			</td>
+			<td>Distance<br>rank #
+			</td>
+			<td>Calories</td>
+			<td>Avg speed<br>km/h
+			</td>
+			<td>Avg speed<br>rank #
+			</td>
+			<td>Activity</td>
+		</tr>
+
 		<tr ng-repeat="workout in workouts">
 			<td>{{workout.id}}</td>
 			<td>{{workout.readableStartTime}}</td>
