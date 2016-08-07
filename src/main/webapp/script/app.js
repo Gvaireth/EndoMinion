@@ -9,6 +9,12 @@ endoMinion.controller('statisticsCtrl', function($scope) {
 	$scope.message = 'Statistics page.';
 });
 
+endoMinion.controller('workoutDetailsCtrl', function($scope,$location) {
+	$scope.message = 'Workout Details page.';
+	$scope.id=$location.search().id;
+});
+
+
 endoMinion.config(function($routeProvider) {
 	$routeProvider.when('/', {
 		templateUrl : '/home/about.html',
