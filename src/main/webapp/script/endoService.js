@@ -6,6 +6,9 @@ endoMinion.factory('endoService', function($http, $rootScope) {
 		},
 		getWorkouts : function() {
 			return $http.get('/home/getWorkouts');
+		},
+		getDetailedWorkout : function(endomondoId) {
+			return $http.get('/home/getDetailedWorkout?endomondoId='+endomondoId);
 		}
 	}
 });

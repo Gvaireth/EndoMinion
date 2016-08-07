@@ -39,8 +39,10 @@ public class WorkoutConverter {
 		converted.setFeedStory(rawDetailedWorkout.getFeedStory());
 		converted.setWeatherType(rawDetailedWorkout.getWeatherType());
 		converted.setPoints(new ArrayList<>());
-		for (Point rawPoint : rawDetailedWorkout.getPoints()) {
-			converted.getPoints().add(convertPoint(rawPoint));
+		if (rawDetailedWorkout.getPoints() != null) {
+			for (Point rawPoint : rawDetailedWorkout.getPoints()) {
+				converted.getPoints().add(convertPoint(rawPoint));
+			}
 		}
 		return converted;
 	}

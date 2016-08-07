@@ -80,7 +80,7 @@ public class EndoServiceImpl implements EndoService, ServletContextAware {
 
 	@Override
 	public DetailedWorkoutData getWorkoutDetails(long endomondoId) {
-		endomondoId = 780349296;
+		// endomondoId = 780349296;
 		HttpSession httpSession = Util.session();
 		EndomondoSession endomondoSession = (EndomondoSession) httpSession
 				.getAttribute(SessionAttributes.ENDOMONDO_SESSION.getName());

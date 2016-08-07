@@ -3,6 +3,7 @@ package org.gvaireth.core;
 import java.util.Date;
 import java.util.List;
 
+import org.gvaireth.model.DetailedWorkoutData;
 import org.gvaireth.model.SimpleData;
 import org.gvaireth.model.WorkoutCrudData;
 import org.gvaireth.server.EndoService;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -57,6 +59,13 @@ public class MainController {
 		System.out.println("/getWorkouts");
 		List<WorkoutCrudData> data = service.getWorkouts();
 		service.getWorkoutDetails(0);
+		return new ResponseEntity<>(data, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/getDetailedWorkout", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<DetailedWorkoutData> getDetailedWorkout(@RequestParam String endomondoId) {
+		System.out.println("/getDetailedWorkout endomondoId=" + endomondoId);
+		DetailedWorkoutData data = service.getWorkoutDetails(Long.parseLong(endomondoId));
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 
