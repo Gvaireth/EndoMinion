@@ -6,17 +6,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>EndoMinion</title>
-<link rel="stylesheet" href="/home/css/style.css">
-<link rel="icon" type="image/png" href="/home/img/favicon.png">
+<link rel="stylesheet" href="/EndoMinion/css/style.css">
+<link rel="icon" type="image/png" href="/EndoMinion/img/favicon.png">
 </head>
 
 <body>
 	<center>
 		<table class="mainTable">
 			<tr>
-				<td width="186" height="186" class="mainTable"><a href="/home/"
+				<td width="186" height="186" class="mainTable"><a href="/EndoMinion/"
 					style="width: 0px; height: 0px; border: 0;"> <img id="logo"
-						src="/home/img/avatar.jpg" style="border: 0;">
+						src="/EndoMinion/img/avatar.jpg" style="border: 0;">
 				</a></td>
 				<td class="mainTable" width="800">
 					<div id="title">EndoMinion</div>
@@ -26,14 +26,14 @@
 			<tr>
 				<td class="mainTable"
 					style="text-align: center; vertical-align: top;" height="500px">
-					<a href="/home/old?page=about">About</a><br> <a
-					href="/home/old?page=workouts">Workouts</a><br> <a
-					href="/home/old?page=statistics">Statistics</a><br> <a
+					<a href="/EndoMinion/old?page=about">About</a><br> <a
+					href="/EndoMinion/old?page=workouts">Workouts</a><br> <a
+					href="/EndoMinion/old?page=statistics">Statistics</a><br> <a
 					href="http://howtotrainyourjee.wordpress.com/">Blog</a><br> <a
-					href="/home/old?page=experiments">Experiments</a><br> <a
-					href="/home/index.html">New version</a><br> <!-- 
-<a href="/home/index?page=prototypes">Prototypes</a><br>
- <a href="/home/?page=links">Links</a><br>-->
+					href="/EndoMinion/old?page=experiments">Experiments</a><br> <a
+					href="/EndoMinion/index.html">New version</a><br> <!-- 
+<a href="/EndoMinion/index?page=prototypes">Prototypes</a><br>
+ <a href="/EndoMinion/?page=links">Links</a><br>-->
 				</td>
 				<td class="mainTable" style="vertical-align: top;"><c:choose>
 						<c:when test="${param.page=='about'}">

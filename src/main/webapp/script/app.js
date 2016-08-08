@@ -11,19 +11,19 @@ endoMinion.controller('statisticsCtrl', function($scope) {
 
 endoMinion.config(function($routeProvider) {
 	$routeProvider.when('/', {
-		templateUrl : '/home/about.html',
+		templateUrl : '/EndoMinion/about.html',
 		controller : 'mainCtrl'
 	}).when('/about', {
-		templateUrl : '/home/about.html',
+		templateUrl : '/EndoMinion/about.html',
 		controller : 'mainCtrl'
 	}).when('/workouts', {
-		templateUrl : '/home/workouts.html',
+		templateUrl : '/EndoMinion/workouts.html',
 		controller : 'workoutsCtrl'
 	}).when('/statistics', {
-		templateUrl : '/home/statistics.html',
+		templateUrl : '/EndoMinion/statistics.html',
 		controller : 'statisticsCtrl'
 	}).when('/workoutDetails', {
-		templateUrl : '/home/workoutDetails.html',
+		templateUrl : '/EndoMinion/workoutDetails.html',
 		controller : 'workoutDetailsCtrl'
 	});;
 });

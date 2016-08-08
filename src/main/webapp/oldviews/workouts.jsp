@@ -17,7 +17,7 @@ table, th, td {
 <body>
 	Workouts 
 	<br><br>
-	<form action="/home/?page=workouts" method="GET">
+	<form action="/EndoMinion/?page=workouts" method="GET">
 	 <button type="submit" name="action" value="update">Update data</button>
 	 </form>
 	<table>
