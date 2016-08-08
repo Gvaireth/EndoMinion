@@ -24,7 +24,7 @@ import com.moomeen.endo2java.model.Workout;
 public class EndoServiceImpl implements EndoService, ServletContextAware {
 
 	@Autowired
-	private EndomondoDao cache;
+	private EndomondoDao endomondoDao;
 
 	@Autowired
 	private WorkoutConverter workoutConverter;
@@ -39,7 +39,7 @@ public class EndoServiceImpl implements EndoService, ServletContextAware {
 	}
 
 	public List<WorkoutCrudData> getWorkouts() {
-		List<Workout> rawWorkouts = cache.getWorkouts();
+		List<Workout> rawWorkouts = endomondoDao.getWorkouts();
 		List<WorkoutCrudData> convertedList = new ArrayList<WorkoutCrudData>(rawWorkouts.size());
 		long id = rawWorkouts.size();
 		for (Workout rawWorkout : rawWorkouts) {
@@ -70,7 +70,7 @@ public class EndoServiceImpl implements EndoService, ServletContextAware {
 
 	@Override
 	public void updateData() {
-		cache.updateData();
+		endomondoDao.updateData();
 	}
 
 	@Override
@@ -80,18 +80,8 @@ public class EndoServiceImpl implements EndoService, ServletContextAware {
 
 	@Override
 	public DetailedWorkoutData getWorkoutDetails(long endomondoId) {
-		// endomondoId = 780349296;
-		HttpSession httpSession = Util.session();
-		EndomondoSession endomondoSession = (EndomondoSession) httpSession
-				.getAttribute(SessionAttributes.ENDOMONDO_SESSION.getName());
-		DetailedWorkout rawDetailedWorkout = null;
-		try {
-			rawDetailedWorkout = endomondoSession.getWorkout(endomondoId);
-		} catch (InvocationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// TODO Auto-generated method stub
+	
+		DetailedWorkout	rawDetailedWorkout = endomondoDao.getWorkoutDetails(endomondoId);
 		DetailedWorkoutData converted = workoutConverter.convertDetailedWorkout(rawDetailedWorkout);
 		System.out.println(converted);
 		return converted;

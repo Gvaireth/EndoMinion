@@ -58,7 +58,6 @@ public class MainController {
 	public ResponseEntity<List<WorkoutCrudData>> getWorkouts() {
 		System.out.println("/getWorkouts");
 		List<WorkoutCrudData> data = service.getWorkouts();
-		service.getWorkoutDetails(0);
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 
@@ -68,18 +67,6 @@ public class MainController {
 		DetailedWorkoutData data = service.getWorkoutDetails(Long.parseLong(endomondoId));
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
-
-	// @RequestMapping(value = "/workouts", method = RequestMethod.GET)
-	// public ModelAndView workouts(@RequestParam(defaultValue = "none") String
-	// action, Model model) {
-	// model.addAttribute("data", service.getWorkouts());
-	// model.addAttribute("size", service.getWorkouts().size());
-	// System.out.println("displaying workouts: " + action);
-	// if (action.equals("update")) {
-	// service.updateData();
-	// }
-	// return new ModelAndView("workouts.jsp");
-	// }
 
 	@RequestMapping("/angular")
 	public ModelAndView angular(Model model) {
@@ -93,19 +80,4 @@ public class MainController {
 		return msg;
 	}
 
-	// @RequestMapping(value = "/statistics", method = RequestMethod.GET)
-	// public ModelAndView statistics(@RequestParam(defaultValue = "all") String
-	// action, Model model) {
-	// model.addAttribute("statistics", service.getStatistics());
-	// model.addAttribute("totalPerSport",
-	// service.getStatistics().getTotalPerSport());
-	// model.addAttribute("topDuration",
-	// service.getStatistics().getTopDuration());
-	// model.addAttribute("topDistance",
-	// service.getStatistics().getTopDistance());
-	// model.addAttribute("topSpeedAvg",
-	// service.getStatistics().getTopSpeedAvg());
-	// System.out.println("displaying statistic: " + action);
-	// return new ModelAndView("statistics.jsp");
-	// }
 }

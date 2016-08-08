@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 
 import com.moomeen.endo2java.EndomondoSession;
 import com.moomeen.endo2java.error.InvocationException;
+import com.moomeen.endo2java.error.LoginException;
+import com.moomeen.endo2java.model.DetailedWorkout;
 import com.moomeen.endo2java.model.Workout;
 
 @Component("cache")
@@ -43,41 +45,27 @@ public class EndomondoDaoImpl implements EndomondoDao {
 	public void updateData() {
 
 		System.out.println("fetching workouts for " + endoEmail);
-		EndomondoSession session = new EndomondoSession(endoEmail, endoPass);
+		EndomondoSession endomondoSession;
 		try {
-			session.login();
-			workouts = session.getWorkouts(1000);
-			HttpSession httpSession = Util.session();
-			httpSession.setAttribute(SessionAttributes.ENDOMONDO_SESSION.getName(), session);
+			endomondoSession = getEndomondoSession();
+			endomondoSession.login();
+			workouts = endomondoSession.getWorkouts(1000);
 		} catch (InvocationException e) {
 			System.out.println("well");
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.gvaireth.server.ICache#getWorkouts()
-	 */
-	// @SuppressWarnings("unchecked")
-	// @Override
-	// public List<Workout> getWorkouts() {
-	// HttpSession httpSession = Util.session();
-	// List<Workout> workouts = null;
-	// if (httpSession.getAttribute("workouts") == null) {
-	// System.out.println("fetching workouts");
-	// EndomondoSession session = new EndomondoSession(Const.EMAIL,
-	// Const.PASSWORD);
-	// try {
-	// session.login();
-	// workouts = session.getWorkouts(1000);
-	// httpSession.setAttribute("workouts", workouts);
-	// } catch (InvocationException e) {
-	// System.out.println("well");
-	// }
-	// }
-	// return (List<Workout>) httpSession.getAttribute("workouts");
-	// }
+	public EndomondoSession getEndomondoSession() throws LoginException {
+		HttpSession httpSession = Util.session();
+		EndomondoSession endomondoSession = (EndomondoSession) httpSession
+				.getAttribute(SessionAttributes.ENDOMONDO_SESSION.getName());
+		if (endomondoSession == null) {
+			endomondoSession = new EndomondoSession(endoEmail, endoPass);
+			endomondoSession.login();
+			httpSession.setAttribute(SessionAttributes.ENDOMONDO_SESSION.getName(), endomondoSession);
+		}
+		return endomondoSession;
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -99,4 +87,15 @@ public class EndomondoDaoImpl implements EndomondoDao {
 		return "cache singleton invocation " + i++;
 	}
 
+	@Override
+	public DetailedWorkout getWorkoutDetails(long endomondoId) {
+		DetailedWorkout rawDetailedWorkout = null;
+		try {
+			EndomondoSession endomondoSession = getEndomondoSession();
+			rawDetailedWorkout = endomondoSession.getWorkout(endomondoId);
+		} catch (InvocationException e) {
+			e.printStackTrace();
+		}
+		return rawDetailedWorkout;
+	}
 }
