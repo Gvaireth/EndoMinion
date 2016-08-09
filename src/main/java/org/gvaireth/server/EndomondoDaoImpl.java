@@ -32,14 +32,14 @@ public class EndomondoDaoImpl implements EndomondoDao {
 	@Override
 	public List<Workout> getWorkouts() {
 		if (workouts == null) {
-			updateData();
+			fetchWorkouts();
 		} else {
 			System.out.println("retriveing cached data");
 		}
 		return workouts;
 	}
 
-	public void updateData() {
+	public void fetchWorkouts() {
 
 		System.out.println("fetching workouts for " + endoEmail);
 		EndomondoSession endomondoSession;

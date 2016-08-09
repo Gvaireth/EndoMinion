@@ -13,6 +13,6 @@ public interface EndomondoDao {
 
 	void setWorkouts(List<Workout> workouts);
 
-	public void updateData();
+	public void fetchWorkouts();
 
 }

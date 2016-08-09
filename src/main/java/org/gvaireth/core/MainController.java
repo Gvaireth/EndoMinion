@@ -61,6 +61,13 @@ public class MainController {
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/fetchWorkouts", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<WorkoutCrudData>> fetchWorkouts() {
+		System.out.println("/fetchWorkouts");
+		List<WorkoutCrudData> data = service.fetchWorkouts();
+		return new ResponseEntity<>(data, HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/getDetailedWorkout", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<DetailedWorkoutData> getDetailedWorkout(@RequestParam String endomondoId) {
 		System.out.println("/getDetailedWorkout endomondoId=" + endomondoId);

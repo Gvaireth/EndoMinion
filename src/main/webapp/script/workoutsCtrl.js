@@ -18,6 +18,15 @@ endoMinion.controller('workoutsCtrl', function($scope,$rootScope, endoService) {
 	$scope.setCurrentWorkout = function(workout) {
 		$rootScope.currentWorkout=workout;
 	}
+	
+	$scope.fetchWorkouts = function() {
+		$scope.status = 'Updating Workouts...';
+		$scope.workouts=null; 
+		endoService.fetchWorkouts().then(function(result) {
+			$scope.workouts = result.data;
+			$scope.status = '';
+		});
+	}
 
 	$scope.gridOptions = {
 		data : 'workouts',
@@ -66,12 +75,11 @@ endoMinion.controller('workoutsCtrl', function($scope,$rootScope, endoService) {
 	}
 
 	$scope.status = 'Loading Workouts...';
-	endoService.getSimpleData().then(function(result) {
-		$scope.serverResponse = result.data;
-	});
 
 	endoService.getWorkouts().then(function(result) {
 		$scope.workouts = result.data;
-		$scope.status = 'Workouts';
-	});
+		$scope.status = '';
+	}
+	
+	);
 });

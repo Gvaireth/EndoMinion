@@ -2,11 +2,12 @@
 <link rel="stylesheet" href="/EndoMinion/css/workouts.css">
 </head>
 
-{{status}}
+Workouts
 <br><br>
 <a href="" ng-click="showTable()">Table view</a> |
-<a href="" ng-click="showGrid()">Grid view</a>
-<br>
+<a href="" ng-click="showGrid()">Grid view</a> | 
+<a href="" ng-click="fetchWorkouts()">Update Workouts</a>
+<br><br>
 
 <div ng-if="visibleGrid">
 	<div ui-grid="gridOptions" class="myGrid"></div>
@@ -45,4 +46,5 @@
 			<td>{{workout.sport}}</td>
 		</tr>
 	</table>
+	<br><br>{{status}}
 </div>

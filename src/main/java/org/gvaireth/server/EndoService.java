@@ -12,7 +12,7 @@ public interface EndoService {
 
 	DetailedWorkoutData getWorkoutDetails(long endomondoId);
 
-	void updateData();
+	List<WorkoutCrudData> fetchWorkouts();
 
 	Statistics getStatistics();
 

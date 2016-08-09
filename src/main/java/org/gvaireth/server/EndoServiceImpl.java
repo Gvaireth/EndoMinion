@@ -69,8 +69,9 @@ public class EndoServiceImpl implements EndoService, ServletContextAware {
 	}
 
 	@Override
-	public void updateData() {
-		endomondoDao.updateData();
+	public List<WorkoutCrudData> fetchWorkouts() {
+		endomondoDao.fetchWorkouts();
+		return getWorkouts();
 	}
 
 	@Override
@@ -80,8 +81,8 @@ public class EndoServiceImpl implements EndoService, ServletContextAware {
 
 	@Override
 	public DetailedWorkoutData getWorkoutDetails(long endomondoId) {
-	
-		DetailedWorkout	rawDetailedWorkout = endomondoDao.getWorkoutDetails(endomondoId);
+
+		DetailedWorkout rawDetailedWorkout = endomondoDao.getWorkoutDetails(endomondoId);
 		DetailedWorkoutData converted = workoutConverter.convertDetailedWorkout(rawDetailedWorkout);
 		System.out.println(converted);
 		return converted;
