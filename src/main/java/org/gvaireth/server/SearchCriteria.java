@@ -1,5 +1,7 @@
 package org.gvaireth.server;
 
+import org.gvaireth.model.Timespan;
+
 public class SearchCriteria {
 	private Timespan timespan = Timespan.ALL;
 

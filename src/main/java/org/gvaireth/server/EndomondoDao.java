@@ -8,13 +8,11 @@ import com.moomeen.endo2java.model.Workout;
 public interface EndomondoDao {
 
 	List<Workout> getWorkouts();
-	
+
 	DetailedWorkout getWorkoutDetails(long endomondoId);
 
 	void setWorkouts(List<Workout> workouts);
 
 	public void updateData();
-
-	String test();
 
 }

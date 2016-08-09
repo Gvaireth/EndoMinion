@@ -18,8 +18,6 @@ import com.moomeen.endo2java.model.Workout;
 @Component("cache")
 public class EndomondoDaoImpl implements EndomondoDao {
 
-	int i = 0;
-
 	private List<Workout> workouts;
 
 	@Value("${endo.email}")
@@ -29,7 +27,6 @@ public class EndomondoDaoImpl implements EndomondoDao {
 	private String endoPass;
 
 	public EndomondoDaoImpl() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -67,24 +64,9 @@ public class EndomondoDaoImpl implements EndomondoDao {
 		return endomondoSession;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.gvaireth.server.ICache#setWorkouts(java.util.List)
-	 */
 	@Override
 	public void setWorkouts(List<Workout> workouts) {
 		this.workouts = workouts;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.gvaireth.server.ICache#test()
-	 */
-	@Override
-	public String test() {
-		return "cache singleton invocation " + i++;
 	}
 
 	@Override
