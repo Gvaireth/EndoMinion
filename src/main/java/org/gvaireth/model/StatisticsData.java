@@ -2,7 +2,7 @@ package org.gvaireth.model;
 
 import java.util.List;
 
-public class Statistics {
+public class StatisticsData {
 	private WorkoutTotalCrudData total;
 	private List<WorkoutTotalCrudData> totalPerSport;
 	private List<WorkoutCrudData> topDuration;

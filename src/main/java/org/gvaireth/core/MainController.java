@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.gvaireth.model.DetailedWorkoutData;
 import org.gvaireth.model.SimpleData;
+import org.gvaireth.model.StatisticsData;
 import org.gvaireth.model.WorkoutCrudData;
 import org.gvaireth.server.EndoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +24,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
 
 	@Autowired
-	private EndoService service;// = new EndoService();;
+	private EndoService service;
 
 	@RequestMapping("/old")
 	public ModelAndView helloWorld(Model model) {
-		String page = "foo";
-		System.out.println("front controller: " + page);
+		System.out.println("front controller up");
 		model.addAttribute("app", "home");
 		model.addAttribute("data", service.getWorkouts());
 		model.addAttribute("size", service.getWorkouts().size());
@@ -37,7 +37,6 @@ public class MainController {
 		model.addAttribute("topDuration", service.getStatistics().getTopDuration());
 		model.addAttribute("topDistance", service.getStatistics().getTopDistance());
 		model.addAttribute("topSpeedAvg", service.getStatistics().getTopSpeedAvg());
-		System.out.println("displaying page: " + page);
 		return new ModelAndView("/oldviews/index.jsp");
 	}
 
@@ -58,6 +57,13 @@ public class MainController {
 	public ResponseEntity<List<WorkoutCrudData>> getWorkouts() {
 		System.out.println("/getWorkouts");
 		List<WorkoutCrudData> data = service.getWorkouts();
+		return new ResponseEntity<>(data, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/getStatistics", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<StatisticsData> getStatistics() {
+		System.out.println("/getWorkouts");
+		StatisticsData data = service.getStatistics();
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 

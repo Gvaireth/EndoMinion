@@ -4,19 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpSession;
 
-import org.gvaireth.core.SessionAttributes;
-import org.gvaireth.core.Util;
 import org.gvaireth.model.DetailedWorkoutData;
-import org.gvaireth.model.Statistics;
+import org.gvaireth.model.StatisticsData;
 import org.gvaireth.model.WorkoutCrudData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.ServletContextAware;
 
-import com.moomeen.endo2java.EndomondoSession;
-import com.moomeen.endo2java.error.InvocationException;
 import com.moomeen.endo2java.model.DetailedWorkout;
 import com.moomeen.endo2java.model.Workout;
 
@@ -75,7 +70,7 @@ public class EndoServiceImpl implements EndoService, ServletContextAware {
 	}
 
 	@Override
-	public Statistics getStatistics() {
+	public StatisticsData getStatistics() {
 		return statisticsCalculaor.getStatistics(getWorkouts());
 	}
 

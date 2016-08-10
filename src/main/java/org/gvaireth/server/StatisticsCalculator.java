@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.gvaireth.model.Statistics;
+import org.gvaireth.model.StatisticsData;
 import org.gvaireth.model.WorkoutCrudData;
 import org.gvaireth.model.WorkoutTotalCrudData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,8 +59,8 @@ public class StatisticsCalculator {
 		}
 	};
 
-	public Statistics getStatistics(List<WorkoutCrudData> workouts) {
-		Statistics statistics = new Statistics();
+	public StatisticsData getStatistics(List<WorkoutCrudData> workouts) {
+		StatisticsData statistics = new StatisticsData();
 		Set<Sport> sportsPresent = getSportsPresent(workouts);
 		setTotal(workouts, statistics, sportsPresent);
 		setTopDuration(workouts, statistics);
@@ -69,28 +69,28 @@ public class StatisticsCalculator {
 		return statistics;
 	}
 
-	private void setTopDistance(List<WorkoutCrudData> workouts, Statistics statistics) {
+	private void setTopDistance(List<WorkoutCrudData> workouts, StatisticsData statistics) {
 		List<WorkoutCrudData> topDistance = generateTopDistance(workouts);
 		Collections.sort(topDistance, distanceComparator);
 		Collections.reverse(topDistance);
 		statistics.setTopDistance(topDistance);
 	}
 
-	private void setTopDuration(List<WorkoutCrudData> workouts, Statistics statistics) {
+	private void setTopDuration(List<WorkoutCrudData> workouts, StatisticsData statistics) {
 		List<WorkoutCrudData> topDuration = generateTopDuration(workouts);
 		Collections.sort(topDuration, durationComparator);
 		Collections.reverse(topDuration);
 		statistics.setTopDuration(topDuration);
 	}
 
-	private void setTopSpeedAvg(List<WorkoutCrudData> workouts, Statistics statistics) {
+	private void setTopSpeedAvg(List<WorkoutCrudData> workouts, StatisticsData statistics) {
 		List<WorkoutCrudData> topSpeedAvg = generateTopSpeedAvg(workouts);
 		Collections.sort(topSpeedAvg, speedAvgComparator);
 		Collections.reverse(topSpeedAvg);
 		statistics.setTopSpeedAvg(topSpeedAvg);
 	}
 
-	private void setTotal(List<WorkoutCrudData> workouts, Statistics statistics, Set<Sport> sportsPresent) {
+	private void setTotal(List<WorkoutCrudData> workouts, StatisticsData statistics, Set<Sport> sportsPresent) {
 		statistics.setTotal(getTotal(workouts, Sport.ALL));
 		List<WorkoutTotalCrudData> totalPerSport = new ArrayList<>();
 		for (Sport sport : sportsPresent) {
