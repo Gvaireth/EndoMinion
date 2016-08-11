@@ -23,6 +23,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
+	private int test;
+
 	@Autowired
 	private EndoService service;
 
