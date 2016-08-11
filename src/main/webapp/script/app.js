@@ -5,9 +5,7 @@ endoMinion.controller('mainCtrl', function($scope) {
 
 });
 
-endoMinion.controller('statisticsCtrl', function($scope) {
-	$scope.message = 'Statistics page.';
-});
+
 
 endoMinion.config(function($routeProvider) {
 	$routeProvider.when('/', {

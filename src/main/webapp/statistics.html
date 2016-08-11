@@ -1,3 +1,146 @@
+<head>
+<style>
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 3px;
+}
+</style>
+</head>
 <div>
-statistics will be here
+	Statistics<br>
+	<br> {{status}} All Activities Summary <br> <br>
+	<table>
+		<tr>
+			<td>Workouts</td>
+			<td>Duration</td>
+			<td>Distance km</td>
+			<td>Calories</td>
+		</tr>
+		<tr>
+			<td>{{statistics.total.workoutsNo}}</td>
+			<td>{{statistics.total.readableDuration}}</td>
+			<td>{{statistics.total.distance}}</td>
+			<td>{{statistics.total.calories}}</td>
+		</tr>
+	</table>
+	<br> <br> Summary by Activity <br> <br>
+	<table>
+		<tr>
+			<td>Activity</td>
+			<td>Workouts</td>
+			<td>Duration</td>
+			<td>Distance km</td>
+			<td>Calories</td>
+		</tr>
+		<tr ng-repeat="workout in statistics.totalPerSport ">
+			<td>{{workout.sport}}</td>
+			<td>{{workout.workoutsNo}}</td>
+			<td>{{workout.readableDuration}}</td>
+			<td>{{workout.distance}}</td>
+			<td>{{workout.calories}}</td>
+		</tr>
+	</table>
+
+	<br>
+	<br> Top Distance Workouts <br>
+	<br>
+	<table>
+		<tr>
+			<td>Start time</td>
+			<td>Duration</td>
+			<td>Duration<br>rank #
+			</td>
+			<td>Distance<br>km
+			</td>
+			<td>Distance<br>rank #
+			</td>
+			<td>Calories</td>
+			<td>Avg speed<br>km/h
+			</td>
+			<td>Avg speed<br>rank #
+			</td>
+			<td>Activity</td>
+		</tr>
+		<tr ng-repeat="workout in statistics.topDistance">
+			<td>{{workout.readableStartTime}}</td>
+			<td>{{workout.readableDuration}}</td>
+			<td>{{workout.durationRank}}</td>
+			<td>{{workout.distance}}</td>
+			<td>{{workout.distanceRank}}</td>
+			<td>{{workout.calories}}</td>
+			<td>{{workout.speedAvg}}</td>
+			<td>{{workout.speedAvgRank}}</td>
+			<td>{{workout.sport}}</td>
+		</tr>
+	</table>
+
+	<br>
+	<br> Top Duration Workouts <br>
+	<br>
+	<table>
+		<tr>
+			<td>Start time</td>
+			<td>Duration</td>
+			<td>Duration<br>rank #
+			</td>
+			<td>Distance<br>km
+			</td>
+			<td>Distance<br>rank #
+			</td>
+			<td>Calories</td>
+			<td>Avg speed<br>km/h
+			</td>
+			<td>Avg speed<br>rank #
+			</td>
+			<td>Activity</td>
+		</tr>
+		<tr ng-repeat="workout in statistics.topDuration">
+			<td>{{workout.readableStartTime}}</td>
+			<td>{{workout.readableDuration}}</td>
+			<td>{{workout.durationRank}}</td>
+			<td>{{workout.distance}}</td>
+			<td>{{workout.distanceRank}}</td>
+			<td>{{workout.calories}}</td>
+			<td>{{workout.speedAvg}}</td>
+			<td>{{workout.speedAvgRank}}</td>
+			<td>{{workout.sport}}</td>
+		</tr>
+	</table>
+
+	<br>
+	<br> Top Average Speed Workouts <br>
+	<br>
+	<table>
+		<tr>
+			<td>Start time</td>
+			<td>Duration</td>
+			<td>Duration<br>rank #
+			</td>
+			<td>Distance<br>km
+			</td>
+			<td>Distance<br>rank #
+			</td>
+			<td>Calories</td>
+			<td>Avg speed<br>km/h
+			</td>
+			<td>Avg speed<br>rank #
+			</td>
+			<td>Activity</td>
+		</tr>
+		<tr ng-repeat="workout in statistics.topSpeedAvg">
+			<td>{{workout.readableStartTime}}</td>
+			<td>{{workout.readableDuration}}</td>
+			<td>{{workout.durationRank}}</td>
+			<td>{{workout.distance}}</td>
+			<td>{{workout.distanceRank}}</td>
+			<td>{{workout.calories}}</td>
+			<td>{{workout.speedAvg}}</td>
+			<td>{{workout.speedAvgRank}}</td>
+			<td>{{workout.sport}}</td>
+		</tr>
+	</table>
+
+
+
 </div>

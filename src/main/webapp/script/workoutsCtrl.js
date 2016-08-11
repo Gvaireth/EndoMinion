@@ -1,4 +1,4 @@
-endoMinion.controller('workoutsCtrl', function($scope,$rootScope, endoService) {
+endoMinion.controller('workoutsCtrl', function($scope, $rootScope, endoService) {
 
 	$scope.visibleTable = true;
 	$scope.visibleGrid = false;
