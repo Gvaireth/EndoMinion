@@ -1,7 +1,8 @@
-workout details<br>
-message: {{message}}<br>
-id: {{id}}<br>
-current Workout:{{currentWorkout.id}}<br>
-current Workout duration:{{currentWorkout.readableDuration}}<br>
-status:{{status}}<br>
-detailedWorkout:{{detailedWorkout}}
+Workout #{{id}} details
+<br><br>
+{{status}}
+{{details.feedStory}}<br><br>
+Weather type: {{details.weatherType}}<br>
+Duration: {{workout.readableDuration}}<br>
+Number of tracking points: {{pointsNumber}}<br>
+Resolution of tracking points: {{workout.distance/pointsNumber | number:3}}

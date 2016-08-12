@@ -36,7 +36,9 @@ public class WorkoutConverter {
 
 	public DetailedWorkoutData convertDetailedWorkout(DetailedWorkout rawDetailedWorkout) {
 		DetailedWorkoutData converted = new DetailedWorkoutData();
-		converted.setFeedStory(rawDetailedWorkout.getFeedStory());
+		String feedStory = rawDetailedWorkout.getFeedStory();
+		feedStory = feedStory.replace("<0>", "").replace("</0>", "");
+		converted.setFeedStory(feedStory);
 		converted.setWeatherType(rawDetailedWorkout.getWeatherType());
 		converted.setPoints(new ArrayList<>());
 		if (rawDetailedWorkout.getPoints() != null) {
