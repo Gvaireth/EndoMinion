@@ -3,6 +3,16 @@ Workout #{{id}} details
 {{status}}
 {{details.feedStory}}<br><br>
 Weather type: {{details.weatherType}}<br>
+Start time: {{workout.readableStartTime}}<br>
 Duration: {{workout.readableDuration}}<br>
+Duration rank #: {{workout.durationRank}}<br>
+Distance: {{workout.distance}}<br>
+Distance rank #: {{workout.distanceRank}}<br>
+Avg speed km/h: {{workout.speedAvg}} <br>
+Avg speed rank #: {{workout.speedAvgRank}}<br>
+Calories: {{workout.calories}}<br>
+Activity: {{workout.sport}}<br><br>
+
 Number of tracking points: {{pointsNumber}}<br>
-Resolution of tracking points: {{workout.distance/pointsNumber | number:3}}
+Resolution of tracking points: {{workout.trackingResolution}}<br>
+Endomondo id: {{workout.endomondoId}}
