@@ -71,8 +71,8 @@ public class Converter {
 		converted.setSyncTime(rawInfo.getSyncTime());
 		converted.setDateOfBirth(rawInfo.getDateOfBirth());
 		converted.setLoungeMember(rawInfo.getLoungeMember());
-		converted.setFavoriteSport(rawInfo.getFavoriteSport());
-		converted.setFavoriteSport2(rawInfo.getFavoriteSport2());
+		converted.setFavoriteSportEnum(rawInfo.getFavoriteSport());
+		converted.setFavoriteSport2Enum(rawInfo.getFavoriteSport2());
 		converted.setUnits(rawInfo.getUnits());
 		converted.setCountry(rawInfo.getCountry());
 		converted.setId(rawInfo.getId());

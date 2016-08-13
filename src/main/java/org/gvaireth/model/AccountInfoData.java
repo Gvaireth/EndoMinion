@@ -18,8 +18,8 @@ public class AccountInfoData implements Serializable {
 	private DateTime syncTime;
 	private DateTime dateOfBirth;
 	private Boolean loungeMember;
-	private Sport favoriteSport;
-	private Sport favoriteSport2;
+	private Sport favoriteSportEnum;
+	private Sport favoriteSport2Enum;
 	private String units;
 	private String country;
 	private Long id;
@@ -79,20 +79,28 @@ public class AccountInfoData implements Serializable {
 		this.loungeMember = loungeMember;
 	}
 
-	public Sport getFavoriteSport() {
-		return favoriteSport;
+	public Sport getFavoriteSportEnum() {
+		return favoriteSportEnum;
 	}
 
-	public void setFavoriteSport(Sport favoriteSport) {
-		this.favoriteSport = favoriteSport;
+	public void setFavoriteSportEnum(Sport favoriteSport) {
+		this.favoriteSportEnum = favoriteSport;
 	}
 
-	public Sport getFavoriteSport2() {
-		return favoriteSport2;
+	public String getFavoriteSport() {
+		return favoriteSportEnum.description();
 	}
 
-	public void setFavoriteSport2(Sport favoriteSport2) {
-		this.favoriteSport2 = favoriteSport2;
+	public Sport getFavoriteSport2Enum() {
+		return favoriteSport2Enum;
+	}
+
+	public void setFavoriteSport2Enum(Sport favoriteSport2) {
+		this.favoriteSport2Enum = favoriteSport2;
+	}
+
+	public String getFavoriteSport2() {
+		return favoriteSport2Enum.description();
 	}
 
 	public String getUnits() {
@@ -178,10 +186,11 @@ public class AccountInfoData implements Serializable {
 	@Override
 	public String toString() {
 		return "AccountInfoData [weight=" + weight + ", phone=" + phone + ", sex=" + sex + ", syncTime=" + syncTime
-				+ ", dateOfBirth=" + dateOfBirth + ", loungeMember=" + loungeMember + ", favoriteSport=" + favoriteSport
-				+ ", favoriteSport2=" + favoriteSport2 + ", units=" + units + ", country=" + country + ", id=" + id
-				+ ", firstName=" + firstName + ", lastName=" + lastName + ", pictureId=" + pictureId + ", weightTime="
-				+ weightTime + ", height=" + height + ", createdTime=" + createdTime + ", timeZone=" + timeZone + "]";
+				+ ", dateOfBirth=" + dateOfBirth + ", loungeMember=" + loungeMember + ", favoriteSport="
+				+ favoriteSportEnum + ", favoriteSport2=" + favoriteSport2Enum + ", units=" + units + ", country="
+				+ country + ", id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", pictureId="
+				+ pictureId + ", weightTime=" + weightTime + ", height=" + height + ", createdTime=" + createdTime
+				+ ", timeZone=" + timeZone + "]";
 	}
 
 }
