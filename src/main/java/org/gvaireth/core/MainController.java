@@ -3,6 +3,7 @@ package org.gvaireth.core;
 import java.util.Date;
 import java.util.List;
 
+import org.gvaireth.model.AccountInfoData;
 import org.gvaireth.model.DetailedWorkoutData;
 import org.gvaireth.model.SimpleData;
 import org.gvaireth.model.StatisticsData;
@@ -56,7 +57,6 @@ public class MainController {
 	@RequestMapping(value = "/getWorkouts", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<WorkoutCrudData>> getWorkouts() {
 		System.out.println("/getWorkouts");
-		System.out.println(service.getAccountInfo());
 		List<WorkoutCrudData> data = service.getWorkouts();
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
@@ -72,6 +72,13 @@ public class MainController {
 	public ResponseEntity<List<WorkoutCrudData>> fetchWorkouts() {
 		System.out.println("/fetchWorkouts");
 		List<WorkoutCrudData> data = service.fetchWorkouts();
+		return new ResponseEntity<>(data, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/getAccountInfo", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<AccountInfoData> getAccountInfo() {
+		System.out.println("/getAccountInfo");
+		AccountInfoData data = service.getAccountInfo();
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 

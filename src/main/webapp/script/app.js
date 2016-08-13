@@ -5,8 +5,6 @@ endoMinion.controller('mainCtrl', function($scope) {
 
 });
 
-
-
 endoMinion.config(function($routeProvider) {
 	$routeProvider.when('/', {
 		templateUrl : '/EndoMinion/about.html',
@@ -20,8 +18,11 @@ endoMinion.config(function($routeProvider) {
 	}).when('/statistics', {
 		templateUrl : '/EndoMinion/statistics.html',
 		controller : 'statisticsCtrl'
+	}).when('/signin', {
+		templateUrl : '/EndoMinion/signIn.html',
+		controller : 'signInCtrl'
 	}).when('/workoutDetails', {
 		templateUrl : '/EndoMinion/workoutDetails.html',
 		controller : 'workoutDetailsCtrl'
-	});;
+	});
 });

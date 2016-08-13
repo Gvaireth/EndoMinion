@@ -13,6 +13,9 @@ endoMinion.factory('endoService', function($http, $rootScope) {
 		getStatistics : function() {
 			return $http.get('/EndoMinion/getStatistics');
 		},
+		getAccountInfo : function() {
+			return $http.get('/EndoMinion/getAccountInfo');
+		},
 		getDetailedWorkout : function(endomondoId) {
 			return $http.get('/EndoMinion/getDetailedWorkout?endomondoId='+endomondoId);
 		}
