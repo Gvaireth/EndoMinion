@@ -2,17 +2,19 @@ package org.gvaireth.server;
 
 import java.util.ArrayList;
 
+import org.gvaireth.model.AccountInfoData;
 import org.gvaireth.model.DetailedWorkoutData;
 import org.gvaireth.model.PointData;
 import org.gvaireth.model.WorkoutCrudData;
 import org.springframework.stereotype.Component;
 
+import com.moomeen.endo2java.model.AccountInfo;
 import com.moomeen.endo2java.model.DetailedWorkout;
 import com.moomeen.endo2java.model.Point;
 import com.moomeen.endo2java.model.Workout;
 
 @Component
-public class WorkoutConverter {
+public class Converter {
 	public WorkoutCrudData convertWorkout(Workout rawWorkout) {
 		WorkoutCrudData crudData = new WorkoutCrudData();
 		if (rawWorkout.getDistance() != null) {
@@ -58,6 +60,29 @@ public class WorkoutConverter {
 		converted.setLongitude(rawPoint.getLongitude());
 		converted.setSpeed(rawPoint.getSpeed());
 		converted.setTime(rawPoint.getTime());
+		return converted;
+	}
+
+	public AccountInfoData convertAccountInfo(AccountInfo rawInfo) {
+		AccountInfoData converted = new AccountInfoData();
+		converted.setWeight(rawInfo.getWeight());
+		converted.setPhone(rawInfo.getPhone());
+		converted.setSex(rawInfo.getSex());
+		converted.setSyncTime(rawInfo.getSyncTime());
+		converted.setDateOfBirth(rawInfo.getDateOfBirth());
+		converted.setLoungeMember(rawInfo.getLoungeMember());
+		converted.setFavoriteSport(rawInfo.getFavoriteSport());
+		converted.setFavoriteSport2(rawInfo.getFavoriteSport2());
+		converted.setUnits(rawInfo.getUnits());
+		converted.setCountry(rawInfo.getCountry());
+		converted.setId(rawInfo.getId());
+		converted.setFirstName(rawInfo.getFirstName());
+		converted.setLastName(rawInfo.getLastName());
+		converted.setPictureId(rawInfo.getPictureId());
+		converted.setWeightTime(rawInfo.getWeightTime());
+		converted.setHeight(rawInfo.getHeight());
+		converted.setCreatedTime(rawInfo.getCreatedTime());
+		converted.setTimeZone(rawInfo.getTimeZone());
 		return converted;
 	}
 

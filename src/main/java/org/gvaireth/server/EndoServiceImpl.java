@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 
+import org.gvaireth.model.AccountInfoData;
 import org.gvaireth.model.DetailedWorkoutData;
 import org.gvaireth.model.StatisticsData;
 import org.gvaireth.model.WorkoutCrudData;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.ServletContextAware;
 
+import com.moomeen.endo2java.model.AccountInfo;
 import com.moomeen.endo2java.model.DetailedWorkout;
 import com.moomeen.endo2java.model.Workout;
 
@@ -22,7 +24,7 @@ public class EndoServiceImpl implements EndoService, ServletContextAware {
 	private EndomondoDao endomondoDao;
 
 	@Autowired
-	private WorkoutConverter workoutConverter;
+	private Converter workoutConverter;
 
 	@Autowired
 	private StatisticsCalculator statisticsCalculaor;
@@ -76,24 +78,16 @@ public class EndoServiceImpl implements EndoService, ServletContextAware {
 
 	@Override
 	public DetailedWorkoutData getWorkoutDetails(long endomondoId) {
-
 		DetailedWorkout rawDetailedWorkout = endomondoDao.getWorkoutDetails(endomondoId);
 		DetailedWorkoutData converted = workoutConverter.convertDetailedWorkout(rawDetailedWorkout);
 		System.out.println(converted);
 		return converted;
 	}
 
-	// public AccountInfo getAccountInfo() {
-	// if (accountInfo == null) {
-	// EndomondoSession session = new EndomondoSession(EMAIL, PASSWORD);
-	// try {
-	// session.login();
-	// accountInfo = session.getAccountInfo();
-	// } catch (InvocationException e) {
-	// System.out.println("well");
-	// }
-	// }
-	// return accountInfo;
-	// }
+	@Override
+	public AccountInfoData getAccountInfo() {
+		AccountInfo accountInfoRaw = endomondoDao.getAccountInfo();
+		return workoutConverter.convertAccountInfo(accountInfoRaw);
+	}
 
 }

@@ -21,7 +21,7 @@ import com.moomeen.endo2java.model.Sport;
 public class StatisticsCalculator {
 
 	@Autowired
-	private WorkoutConverter workoutConverter;
+	private Converter workoutConverter;
 
 	Comparator<WorkoutCrudData> distanceComparator = (WorkoutCrudData w1, WorkoutCrudData w2) -> {
 		if (w1.getDistance() != null && w2.getDistance() != null) {

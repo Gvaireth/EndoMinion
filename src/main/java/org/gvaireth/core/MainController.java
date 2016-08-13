@@ -23,8 +23,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
-	private int test;
-
 	@Autowired
 	private EndoService service;
 
@@ -58,6 +56,7 @@ public class MainController {
 	@RequestMapping(value = "/getWorkouts", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<WorkoutCrudData>> getWorkouts() {
 		System.out.println("/getWorkouts");
+		System.out.println(service.getAccountInfo());
 		List<WorkoutCrudData> data = service.getWorkouts();
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}

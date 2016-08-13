@@ -2,6 +2,7 @@ package org.gvaireth.server;
 
 import java.util.List;
 
+import com.moomeen.endo2java.model.AccountInfo;
 import com.moomeen.endo2java.model.DetailedWorkout;
 import com.moomeen.endo2java.model.Workout;
 
@@ -13,6 +14,8 @@ public interface EndomondoDao {
 
 	void setWorkouts(List<Workout> workouts);
 
-	public void fetchWorkouts();
+	void fetchWorkouts();
+
+	AccountInfo getAccountInfo();
 
 }

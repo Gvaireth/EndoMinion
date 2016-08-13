@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import com.moomeen.endo2java.EndomondoSession;
 import com.moomeen.endo2java.error.InvocationException;
 import com.moomeen.endo2java.error.LoginException;
+import com.moomeen.endo2java.model.AccountInfo;
 import com.moomeen.endo2java.model.DetailedWorkout;
 import com.moomeen.endo2java.model.Workout;
 
@@ -19,6 +20,7 @@ import com.moomeen.endo2java.model.Workout;
 public class EndomondoDaoImpl implements EndomondoDao {
 
 	private List<Workout> workouts;
+	private AccountInfo accountInfo;
 
 	@Value("${endo.email}")
 	private String endoEmail;
@@ -40,7 +42,6 @@ public class EndomondoDaoImpl implements EndomondoDao {
 	}
 
 	public void fetchWorkouts() {
-
 		System.out.println("fetching workouts for " + endoEmail);
 		EndomondoSession endomondoSession;
 		try {
@@ -48,7 +49,7 @@ public class EndomondoDaoImpl implements EndomondoDao {
 			endomondoSession.login();
 			workouts = endomondoSession.getWorkouts(1000);
 		} catch (InvocationException e) {
-			System.out.println("well");
+			System.out.println("fetchWorkouts fuckup " + e);
 		}
 	}
 
@@ -79,5 +80,18 @@ public class EndomondoDaoImpl implements EndomondoDao {
 			e.printStackTrace();
 		}
 		return rawDetailedWorkout;
+	}
+
+	public AccountInfo getAccountInfo() {
+		if (accountInfo == null) {
+			EndomondoSession session;
+			try {
+				session = getEndomondoSession();
+				accountInfo = session.getAccountInfo();
+			} catch (InvocationException e) {
+				System.out.println("getAccountInfo fuckup " + e);
+			}
+		}
+		return accountInfo;
 	}
 }
