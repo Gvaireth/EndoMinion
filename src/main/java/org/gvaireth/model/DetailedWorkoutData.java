@@ -13,6 +13,7 @@ public class DetailedWorkoutData implements Serializable {
 	private Integer weatherType;
 	private String feedStory;
 	private List<PointData> points;
+	private WorkoutData basicWorkoutData;
 
 	public Integer getWeatherType() {
 		return weatherType;
@@ -42,6 +43,14 @@ public class DetailedWorkoutData implements Serializable {
 	public String toString() {
 		return "DetailedWorkoutData [weatherType=" + weatherType + ", feedStory=" + feedStory + ", points=" + points
 				+ "]";
+	}
+
+	public WorkoutData getBasicWorkoutData() {
+		return basicWorkoutData;
+	}
+
+	public void setBasicWorkoutData(WorkoutData basicWorkoutData) {
+		this.basicWorkoutData = basicWorkoutData;
 	}
 
 }

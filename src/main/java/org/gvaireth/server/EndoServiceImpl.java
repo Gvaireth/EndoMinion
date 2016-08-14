@@ -8,7 +8,7 @@ import javax.servlet.ServletContext;
 import org.gvaireth.model.AccountInfoData;
 import org.gvaireth.model.DetailedWorkoutData;
 import org.gvaireth.model.StatisticsData;
-import org.gvaireth.model.WorkoutCrudData;
+import org.gvaireth.model.WorkoutData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,13 +34,13 @@ public class EndoServiceImpl implements EndoService {
 		// TODO Auto-generated constructor stub
 	}
 
-	public List<WorkoutCrudData> getWorkouts() {
+	public List<WorkoutData> getWorkouts() {
 		List<Workout> rawWorkouts = endomondoDao.getWorkouts();
-		List<WorkoutCrudData> convertedList = new ArrayList<WorkoutCrudData>(rawWorkouts.size());
+		List<WorkoutData> convertedList = new ArrayList<WorkoutData>(rawWorkouts.size());
 		long id = rawWorkouts.size();
 		for (Workout rawWorkout : rawWorkouts) {
 			if (rawWorkout != null) {
-				WorkoutCrudData converted = workoutConverter.convertWorkout(rawWorkout);
+				WorkoutData converted = workoutConverter.convertWorkout(rawWorkout);
 				converted.setId(id--);
 				convertedList.add(converted);
 			} else {
@@ -52,7 +52,7 @@ public class EndoServiceImpl implements EndoService {
 	}
 
 	@Override
-	public List<WorkoutCrudData> fetchWorkouts() {
+	public List<WorkoutData> fetchWorkouts() {
 		endomondoDao.fetchWorkouts();
 		return getWorkouts();
 	}
@@ -66,7 +66,9 @@ public class EndoServiceImpl implements EndoService {
 	public DetailedWorkoutData getWorkoutDetails(long endomondoId) {
 		DetailedWorkout rawDetailedWorkout = endomondoDao.getWorkoutDetails(endomondoId);
 		DetailedWorkoutData converted = workoutConverter.convertDetailedWorkout(rawDetailedWorkout);
-		System.out.println(converted);
+		Workout basicWorkoutData = rawDetailedWorkout;
+		WorkoutData convertedBasicData = workoutConverter.convertWorkout(basicWorkoutData);
+		converted.setBasicWorkoutData(convertedBasicData);
 		return converted;
 	}
 

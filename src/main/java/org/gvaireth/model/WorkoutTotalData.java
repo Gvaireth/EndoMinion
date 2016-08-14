@@ -4,7 +4,7 @@ import org.gvaireth.core.Util;
 
 import com.moomeen.endo2java.model.Sport;
 
-public class WorkoutTotalCrudData implements Comparable<WorkoutTotalCrudData> {
+public class WorkoutTotalData implements Comparable<WorkoutTotalData> {
 	private Integer workoutsNo;
 	private Long duration;
 	private Double distance;
@@ -72,7 +72,7 @@ public class WorkoutTotalCrudData implements Comparable<WorkoutTotalCrudData> {
 	}
 
 	@Override
-	public int compareTo(WorkoutTotalCrudData o) {
+	public int compareTo(WorkoutTotalData o) {
 		return workoutsNo - o.workoutsNo;
 	}
 

@@ -5,15 +5,15 @@ import java.util.List;
 import org.gvaireth.model.AccountInfoData;
 import org.gvaireth.model.DetailedWorkoutData;
 import org.gvaireth.model.StatisticsData;
-import org.gvaireth.model.WorkoutCrudData;
+import org.gvaireth.model.WorkoutData;
 
 public interface EndoService {
 
-	List<WorkoutCrudData> getWorkouts();
+	List<WorkoutData> getWorkouts();
 
 	DetailedWorkoutData getWorkoutDetails(long endomondoId);
 
-	List<WorkoutCrudData> fetchWorkouts();
+	List<WorkoutData> fetchWorkouts();
 
 	StatisticsData getStatistics();
 

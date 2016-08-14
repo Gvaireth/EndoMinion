@@ -3,41 +3,41 @@ package org.gvaireth.model;
 import java.util.List;
 
 public class StatisticsData {
-	private WorkoutTotalCrudData total;
-	private List<WorkoutTotalCrudData> totalPerSport;
-	private List<WorkoutCrudData> topDuration;
-	private List<WorkoutCrudData> topDistance;
-	private List<WorkoutCrudData> topSpeedAvg;
+	private WorkoutTotalData total;
+	private List<WorkoutTotalData> totalPerSport;
+	private List<WorkoutData> topDuration;
+	private List<WorkoutData> topDistance;
+	private List<WorkoutData> topSpeedAvg;
 
-	public List<WorkoutCrudData> getTopSpeedAvg() {
+	public List<WorkoutData> getTopSpeedAvg() {
 		return topSpeedAvg;
 	}
 
-	public void setTopSpeedAvg(List<WorkoutCrudData> topSpeedAvg) {
+	public void setTopSpeedAvg(List<WorkoutData> topSpeedAvg) {
 		this.topSpeedAvg = topSpeedAvg;
 	}
 
-	public List<WorkoutCrudData> getTopDistance() {
+	public List<WorkoutData> getTopDistance() {
 		return topDistance;
 	}
 
-	public void setTopDistance(List<WorkoutCrudData> topDistance) {
+	public void setTopDistance(List<WorkoutData> topDistance) {
 		this.topDistance = topDistance;
 	}
 
-	public WorkoutTotalCrudData getTotal() {
+	public WorkoutTotalData getTotal() {
 		return total;
 	}
 
-	public void setTotal(WorkoutTotalCrudData total) {
+	public void setTotal(WorkoutTotalData total) {
 		this.total = total;
 	}
 
-	public List<WorkoutTotalCrudData> getTotalPerSport() {
+	public List<WorkoutTotalData> getTotalPerSport() {
 		return totalPerSport;
 	}
 
-	public void setTotalPerSport(List<WorkoutTotalCrudData> totalPerSport) {
+	public void setTotalPerSport(List<WorkoutTotalData> totalPerSport) {
 		this.totalPerSport = totalPerSport;
 	}
 
@@ -46,11 +46,11 @@ public class StatisticsData {
 		return "Statistics [total=" + total + ", totalPerSport=" + totalPerSport + "]";
 	}
 
-	public List<WorkoutCrudData> getTopDuration() {
+	public List<WorkoutData> getTopDuration() {
 		return topDuration;
 	}
 
-	public void setTopDuration(List<WorkoutCrudData> longest) {
+	public void setTopDuration(List<WorkoutData> longest) {
 		this.topDuration = longest;
 	}
 

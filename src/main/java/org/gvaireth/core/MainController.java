@@ -5,7 +5,7 @@ import java.util.List;
 import org.gvaireth.model.AccountInfoData;
 import org.gvaireth.model.DetailedWorkoutData;
 import org.gvaireth.model.StatisticsData;
-import org.gvaireth.model.WorkoutCrudData;
+import org.gvaireth.model.WorkoutData;
 import org.gvaireth.server.EndoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,9 +39,9 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "/getWorkouts", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<WorkoutCrudData>> getWorkouts() {
+	public ResponseEntity<List<WorkoutData>> getWorkouts() {
 		System.out.println("/getWorkouts");
-		List<WorkoutCrudData> data = service.getWorkouts();
+		List<WorkoutData> data = service.getWorkouts();
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 
@@ -53,9 +53,9 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "/fetchWorkouts", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<WorkoutCrudData>> fetchWorkouts() {
+	public ResponseEntity<List<WorkoutData>> fetchWorkouts() {
 		System.out.println("/fetchWorkouts");
-		List<WorkoutCrudData> data = service.fetchWorkouts();
+		List<WorkoutData> data = service.fetchWorkouts();
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 

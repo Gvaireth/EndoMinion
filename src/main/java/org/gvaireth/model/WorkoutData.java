@@ -1,12 +1,15 @@
 package org.gvaireth.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.gvaireth.core.Util;
 
 import com.moomeen.endo2java.model.Sport;
 
-public class WorkoutCrudData {
+public class WorkoutData implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private long id;
 	private long endomondoId;

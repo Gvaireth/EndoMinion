@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.gvaireth.model.AccountInfoData;
 import org.gvaireth.model.DetailedWorkoutData;
 import org.gvaireth.model.PointData;
-import org.gvaireth.model.WorkoutCrudData;
+import org.gvaireth.model.WorkoutData;
 import org.springframework.stereotype.Component;
 
 import com.moomeen.endo2java.model.AccountInfo;
@@ -15,8 +15,8 @@ import com.moomeen.endo2java.model.Workout;
 
 @Component
 public class Converter {
-	public WorkoutCrudData convertWorkout(Workout rawWorkout) {
-		WorkoutCrudData crudData = new WorkoutCrudData();
+	public WorkoutData convertWorkout(Workout rawWorkout) {
+		WorkoutData crudData = new WorkoutData();
 		if (rawWorkout.getDistance() != null) {
 			double dist = trimDouble(rawWorkout.getDistance());
 			crudData.setDistance(dist);
