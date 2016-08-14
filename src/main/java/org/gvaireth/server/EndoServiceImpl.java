@@ -31,7 +31,6 @@ public class EndoServiceImpl implements EndoService {
 	ServletContext servletContext;
 
 	public EndoServiceImpl() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public List<WorkoutData> getWorkouts() {

@@ -42,6 +42,7 @@ public class EndomondoDaoImpl implements EndomondoDao {
 	}
 
 	public void fetchWorkouts() {
+
 		System.out.println("fetching workouts for " + endoEmail);
 		EndomondoSession endomondoSession;
 		try {
@@ -91,6 +92,7 @@ public class EndomondoDaoImpl implements EndomondoDao {
 			} catch (InvocationException e) {
 				System.out.println("getAccountInfo fuckup " + e);
 			}
+
 		}
 		return accountInfo;
 	}

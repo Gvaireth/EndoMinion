@@ -1,8 +1,10 @@
 endoMinion.controller('workoutDetailsCtrl', function($scope, $routeParams,endoService) {
 	$scope.status = 'Loading Workout Details...';
-	//$scope.id = $location.search().id;
+	endoService.getAccountInfo().then(function(result) {
+		$scope.account = result.data;
+	});
 
-	endoService.getDetailedWorkout($routeParams.endomondoId/*$rootScope.currentWorkout.endomondoId*/).then(
+	endoService.getDetailedWorkout($routeParams.endomondoId).then(
 			function(result) {
 				$scope.details = result.data;
 				$scope.status = '';
