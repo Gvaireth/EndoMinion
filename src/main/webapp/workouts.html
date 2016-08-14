@@ -34,7 +34,7 @@ Workouts
 			<td>Activity</td>
 		</tr>
 		<tr ng-repeat="workout in workouts">
-			<td><a ng-click="setCurrentWorkout(workout)" href="#workoutDetails?id={{workout.id}}">{{workout.id}}</a></td>
+			<td><a ng-click="setCurrentWorkout(workout)" href="#workoutDetails/{{workout.endomondoId}}">{{workout.id}}</a></td>
 			<td>{{workout.readableStartTime}}</td>
 			<td>{{workout.readableDuration}}</td>
 			<td>{{workout.durationRank}}</td>

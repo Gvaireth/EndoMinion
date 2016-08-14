@@ -11,14 +11,13 @@ import org.gvaireth.model.StatisticsData;
 import org.gvaireth.model.WorkoutCrudData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.ServletContextAware;
 
 import com.moomeen.endo2java.model.AccountInfo;
 import com.moomeen.endo2java.model.DetailedWorkout;
 import com.moomeen.endo2java.model.Workout;
 
 @Service("endoservice")
-public class EndoServiceImpl implements EndoService, ServletContextAware {
+public class EndoServiceImpl implements EndoService {
 
 	@Autowired
 	private EndomondoDao endomondoDao;
@@ -50,19 +49,6 @@ public class EndoServiceImpl implements EndoService, ServletContextAware {
 		}
 		statisticsCalculaor.calculateRanks(convertedList);
 		return convertedList;
-	}
-
-	public List<Workout> getRawWorkouts() {
-		List<Workout> rawWorkouts = new EndomondoDaoImpl().getWorkouts();
-		return rawWorkouts;
-	}
-
-	@Override
-	public void setServletContext(ServletContext servletContext) {
-		System.out.println("setting context");
-		this.servletContext = servletContext;
-		System.out.println(servletContext);
-
 	}
 
 	@Override

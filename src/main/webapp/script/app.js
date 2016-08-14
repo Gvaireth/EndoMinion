@@ -21,7 +21,7 @@ endoMinion.config(function($routeProvider) {
 	}).when('/signin', {
 		templateUrl : '/EndoMinion/signIn.html',
 		controller : 'signInCtrl'
-	}).when('/workoutDetails', {
+	}).when('/workoutDetails/:endomondoId', {
 		templateUrl : '/EndoMinion/workoutDetails.html',
 		controller : 'workoutDetailsCtrl'
 	});
