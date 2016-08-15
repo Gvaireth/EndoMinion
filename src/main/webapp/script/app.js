@@ -1,4 +1,4 @@
-var endoMinion = angular.module('endoMinion', [ 'ngRoute', 'ui.grid' ]);
+var endoMinion = angular.module('endoMinion', [ 'ngRoute', 'ui.grid','ngMap' ]);
 
 endoMinion.controller('mainCtrl', function($scope) {
 	$scope.message = 'message from controler';
