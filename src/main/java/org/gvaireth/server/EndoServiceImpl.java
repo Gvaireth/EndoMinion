@@ -7,6 +7,7 @@ import javax.servlet.ServletContext;
 
 import org.gvaireth.model.AccountInfoData;
 import org.gvaireth.model.DetailedWorkoutData;
+import org.gvaireth.model.PrefetchDataStatus;
 import org.gvaireth.model.StatisticsData;
 import org.gvaireth.model.WorkoutData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,6 +81,18 @@ public class EndoServiceImpl implements EndoService {
 	public AccountInfoData getAccountInfo() {
 		AccountInfo accountInfoRaw = endomondoDao.getAccountInfo();
 		return workoutConverter.convertAccountInfo(accountInfoRaw);
+	}
+
+	@Override
+	public PrefetchDataStatus prefetchData() {
+		PrefetchDataStatus status = new PrefetchDataStatus();
+		long start = System.currentTimeMillis();
+		List<WorkoutData> workouts = getWorkouts();
+		status.setWorkoutsFetched(workouts.size());
+		getAccountInfo();
+		long end = System.currentTimeMillis();
+		status.setFetchTime(end - start);
+		return status;
 	}
 
 }

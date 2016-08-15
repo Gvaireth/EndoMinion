@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.gvaireth.model.AccountInfoData;
 import org.gvaireth.model.DetailedWorkoutData;
+import org.gvaireth.model.PrefetchDataStatus;
 import org.gvaireth.model.StatisticsData;
 import org.gvaireth.model.WorkoutData;
 import org.gvaireth.server.EndoService;
@@ -36,6 +37,13 @@ public class MainController {
 		model.addAttribute("topDistance", service.getStatistics().getTopDistance());
 		model.addAttribute("topSpeedAvg", service.getStatistics().getTopSpeedAvg());
 		return new ModelAndView("/oldviews/index.jsp");
+	}
+
+	@RequestMapping(value = "/prefetchData", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<PrefetchDataStatus> prefetchData() {
+		System.out.println("/prefetchData");
+		PrefetchDataStatus status = service.prefetchData();
+		return new ResponseEntity<>(status, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/getWorkouts", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
