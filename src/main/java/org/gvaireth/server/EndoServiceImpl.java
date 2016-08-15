@@ -65,9 +65,14 @@ public class EndoServiceImpl implements EndoService {
 	public DetailedWorkoutData getWorkoutDetails(long endomondoId) {
 		DetailedWorkout rawDetailedWorkout = endomondoDao.getWorkoutDetails(endomondoId);
 		DetailedWorkoutData converted = workoutConverter.convertDetailedWorkout(rawDetailedWorkout);
-		Workout basicWorkoutData = rawDetailedWorkout;
-		WorkoutData convertedBasicData = workoutConverter.convertWorkout(basicWorkoutData);
-		converted.setBasicWorkoutData(convertedBasicData);
+		List<WorkoutData> allWorkouts = getWorkouts();
+		WorkoutData enrichedWorkout = null;
+		for (WorkoutData workout : allWorkouts) {
+			if (workout.getEndomondoId() == endomondoId) {
+				enrichedWorkout = workout;
+			}
+		}
+		converted.setBasicWorkoutData(enrichedWorkout);
 		return converted;
 	}
 
