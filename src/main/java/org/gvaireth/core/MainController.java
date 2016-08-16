@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.moomeen.endo2java.model.Sport;
+
 @Controller
 public class MainController {
 
@@ -50,6 +52,13 @@ public class MainController {
 	public ResponseEntity<List<WorkoutData>> getWorkouts() {
 		System.out.println("/getWorkouts");
 		List<WorkoutData> data = service.getWorkouts();
+		return new ResponseEntity<>(data, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/getSports", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<String>> getSports() {
+		System.out.println("/getSports");
+		List<String> data = service.getSports();
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 

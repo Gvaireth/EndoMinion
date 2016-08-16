@@ -2,6 +2,7 @@ package org.gvaireth.server;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.ServletContext;
 
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.moomeen.endo2java.model.AccountInfo;
 import com.moomeen.endo2java.model.DetailedWorkout;
+import com.moomeen.endo2java.model.Sport;
 import com.moomeen.endo2java.model.Workout;
 
 @Service("endoservice")
@@ -93,6 +95,16 @@ public class EndoServiceImpl implements EndoService {
 		long end = System.currentTimeMillis();
 		status.setFetchTime(end - start);
 		return status;
+	}
+
+	@Override
+	public List<String> getSports() {
+		Set<Sport> sportsEnums = statisticsCalculaor.getSportsPresent(getWorkouts());
+		List<String> sports = new ArrayList<>();
+		for (Sport sportEnum : sportsEnums) {
+			sports.add(sportEnum.description());
+		}
+		return sports;
 	}
 
 }

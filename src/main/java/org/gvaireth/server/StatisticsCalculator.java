@@ -101,7 +101,7 @@ public class StatisticsCalculator {
 		statistics.setTotalPerSport(totalPerSport);
 	}
 
-	private Set<Sport> getSportsPresent(List<WorkoutData> workouts) {
+	public Set<Sport> getSportsPresent(List<WorkoutData> workouts) {
 		Set<Sport> sportsPresent = new HashSet<>();
 		for (WorkoutData workout : workouts) {
 			sportsPresent.add(workout.getSportEnum());

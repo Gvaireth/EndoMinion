@@ -79,7 +79,8 @@ endoMinion.controller('workoutsCtrl', function($scope, $rootScope, endoService) 
 	endoService.getWorkouts().then(function(result) {
 		$scope.workouts = result.data;
 		$scope.status = '';
-	}
-	
-	);
+	});
+	endoService.getSports().then(function(result) {
+		$scope.sports = result.data;
+	});
 });

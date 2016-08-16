@@ -8,7 +8,10 @@ Workouts
 <a href="" ng-click="showGrid()">Grid view</a> | 
 <a href="" ng-click="fetchWorkouts()">Update Workouts</a>
 <br><br>
-
+Sports:
+<ul>
+<li ng-repeat="sport in sports">{{sport}} </li>
+</ul>
 <div ng-if="visibleGrid">
 	<div ui-grid="gridOptions" class="myGrid"></div>
 </div>
