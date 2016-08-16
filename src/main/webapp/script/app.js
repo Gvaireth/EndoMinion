@@ -1,12 +1,11 @@
 var endoMinion = angular.module('endoMinion', [ 'ngRoute', 'ui.grid'/* ,'ngMap' */]);
 
 endoMinion.controller('mainCtrl', function($scope, endoService) {
-	$scope.statusLine1 = 'prefetching...';
+	$scope.status = 'prefetching...';
 	$scope.statusLine2 = '';
 	endoService.prefetchData().then(function(result) {
 		$scope.prefetchStatus = result.data;
-		$scope.statusLine1 = $scope.prefetchStatus.workoutsFetched + ' workouts fetched';
-		$scope.statusLine2 = 'in ' + $scope.prefetchStatus.fetchTime + ' ms'
+		$scope.status = $scope.prefetchStatus.workoutsFetched + ' workouts fetched in ' + $scope.prefetchStatus.fetchTime + ' ms'
 	});
 
 });
