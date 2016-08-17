@@ -1,11 +1,11 @@
 endoMinion.controller('workoutsCtrl', function($scope, $rootScope, endoService) {
 
-	$scope.order='distance';
-	$scope.orderById = function() {
-		$scope.order='id'
-	}
-	$scope.orderByDurationRank = function() {
-		$scope.order='durationRank'
+	$scope.order='id';
+	$scope.reverse=true;
+	
+	$scope.orderBy = function(field) {
+		$scope.order=field;
+		$scope.reverse=!$scope.reverse;
 	}
 	
 	$scope.visibleTable = true;

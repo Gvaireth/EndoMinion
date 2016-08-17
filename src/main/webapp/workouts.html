@@ -19,11 +19,18 @@ Show: <select ng-model="selectedSport" ng-options="sport for sport in sports">
 <div ng-if="visibleTable">
 	<table>
 		<tr>
-			<td><a href="" ng-click="orderById()">no.</a></td>
-			<td>Start time</td>
-			<td>Duration</td>
-			<td><a href="" ng-click="orderByDurationRank()">Duration<br>rank #</a></td>
-			<td>Distance<br>km
+			<td><a href="" ng-click="orderBy('id')">no.</a></td>
+			<td><a href="" ng-click="orderBy('startTime')">Start time</a></td>
+			<td><a href="" ng-click="orderBy('duration')">Duration</a></td>
+			<td><a href="" ng-click="orderBy('durationRank')">Duration<br>rank #</a></td>			
+			<td><a href="" ng-click="orderBy('distance')">Distance<br>km</a></td>
+			<td><a href="" ng-click="orderBy('distanceRank')">Distance<br>rank #</a></td>
+			<td><a href="" ng-click="orderBy('calories')">Calories</a></td>
+			<td><a href="" ng-click="orderBy('speedAvg')">Avg speed<br>km/h</a></td>
+			<td><a href="" ng-click="orderBy('speedAvgRank')">Avg speed<br>rank #</a></td>
+			<td><a href="" ng-click="orderBy('sport')">Activity</a></td>
+			
+			<!-- <td>Distance<br>km
 			</td>
 			<td>Distance<br>rank #
 			</td>
@@ -32,9 +39,9 @@ Show: <select ng-model="selectedSport" ng-options="sport for sport in sports">
 			</td>
 			<td>Avg speed<br>rank #
 			</td>
-			<td>Activity</td>
+			<td>Activity</td> -->
 		</tr>
-		<tr ng-repeat="workout in workouts | orderBy:order | filter:(selectedSport!='All' || '') && {sport:selectedSport}">
+		<tr ng-repeat="workout in workouts | orderBy:order:reverse | filter:(selectedSport!='All' || '') && {sport:selectedSport}">
 			<td><a ng-click="setCurrentWorkout(workout)" href="#workoutDetails/{{workout.endomondoId}}">{{workout.id}}</a></td>
 			<td>{{workout.readableStartTime}}</td>
 			<td>{{workout.readableDuration}}</td>
