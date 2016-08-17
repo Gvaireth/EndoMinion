@@ -11,9 +11,6 @@ endoMinion.controller('workoutsCtrl', function($scope, $rootScope, endoService) 
 		$scope.visibleTable = true;
 		$scope.visibleGrid = false;
 	}
-	$scope.clicktest = function() {
-		window.alert('click!')
-	}
 	
 	$scope.setCurrentWorkout = function(workout) {
 		$rootScope.currentWorkout=workout;
@@ -82,5 +79,6 @@ endoMinion.controller('workoutsCtrl', function($scope, $rootScope, endoService) 
 	});
 	endoService.getSports().then(function(result) {
 		$scope.sports = result.data;
+		$scope.selectedSport="All";
 	});
 });

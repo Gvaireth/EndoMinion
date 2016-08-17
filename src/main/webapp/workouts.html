@@ -6,12 +6,11 @@ Workouts
 <br><br>
 <a href="" ng-click="showTable()">Table view</a> |
 <a href="" ng-click="showGrid()">Grid view</a> | 
-<a href="" ng-click="fetchWorkouts()">Update Workouts</a>
+<a href="" ng-click="fetchWorkouts()">Update Workouts</a> |
+Show: <select ng-model="selectedSport" ng-options="sport for sport in sports">
+</select>
 <br><br>
-Sports:
-<ul>
-<li ng-repeat="sport in sports">{{sport}} </li>
-</ul>
+
 <div ng-if="visibleGrid">
 	<div ui-grid="gridOptions" class="myGrid"></div>
 </div>
@@ -36,7 +35,7 @@ Sports:
 			</td>
 			<td>Activity</td>
 		</tr>
-		<tr ng-repeat="workout in workouts">
+		<tr ng-repeat="workout in workouts | filter:(selectedSport!='All' || '') && {sport:selectedSport}">
 			<td><a ng-click="setCurrentWorkout(workout)" href="#workoutDetails/{{workout.endomondoId}}">{{workout.id}}</a></td>
 			<td>{{workout.readableStartTime}}</td>
 			<td>{{workout.readableDuration}}</td>

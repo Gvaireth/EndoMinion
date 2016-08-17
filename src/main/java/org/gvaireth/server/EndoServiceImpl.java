@@ -1,6 +1,7 @@
 package org.gvaireth.server;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -104,6 +105,8 @@ public class EndoServiceImpl implements EndoService {
 		for (Sport sportEnum : sportsEnums) {
 			sports.add(sportEnum.description());
 		}
+		Collections.sort(sports);
+		sports.add(0, Sport.ALL.description());
 		return sports;
 	}
 
