@@ -19,11 +19,10 @@ Show: <select ng-model="selectedSport" ng-options="sport for sport in sports">
 <div ng-if="visibleTable">
 	<table>
 		<tr>
-			<td>no.</td>
+			<td><a href="" ng-click="orderById()">no.</a></td>
 			<td>Start time</td>
 			<td>Duration</td>
-			<td>Duration<br>rank #
-			</td>
+			<td><a href="" ng-click="orderByDurationRank()">Duration<br>rank #</a></td>
 			<td>Distance<br>km
 			</td>
 			<td>Distance<br>rank #
@@ -35,7 +34,7 @@ Show: <select ng-model="selectedSport" ng-options="sport for sport in sports">
 			</td>
 			<td>Activity</td>
 		</tr>
-		<tr ng-repeat="workout in workouts | filter:(selectedSport!='All' || '') && {sport:selectedSport}">
+		<tr ng-repeat="workout in workouts | orderBy:order | filter:(selectedSport!='All' || '') && {sport:selectedSport}">
 			<td><a ng-click="setCurrentWorkout(workout)" href="#workoutDetails/{{workout.endomondoId}}">{{workout.id}}</a></td>
 			<td>{{workout.readableStartTime}}</td>
 			<td>{{workout.readableDuration}}</td>

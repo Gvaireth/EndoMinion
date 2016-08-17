@@ -1,5 +1,13 @@
 endoMinion.controller('workoutsCtrl', function($scope, $rootScope, endoService) {
 
+	$scope.order='distance';
+	$scope.orderById = function() {
+		$scope.order='id'
+	}
+	$scope.orderByDurationRank = function() {
+		$scope.order='durationRank'
+	}
+	
 	$scope.visibleTable = true;
 	$scope.visibleGrid = false;
 	$scope.showGrid = function() {
