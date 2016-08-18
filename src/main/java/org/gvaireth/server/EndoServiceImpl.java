@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 import com.moomeen.endo2java.model.AccountInfo;
 import com.moomeen.endo2java.model.DetailedWorkout;
-import com.moomeen.endo2java.model.Sport;
+import org.gvaireth.model.Sport;
 import com.moomeen.endo2java.model.Workout;
 
 @Service("endoservice")

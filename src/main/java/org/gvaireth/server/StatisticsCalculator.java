@@ -15,7 +15,7 @@ import org.gvaireth.model.WorkoutTotalData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.moomeen.endo2java.model.Sport;
+import org.gvaireth.model.Sport;
 
 @Component
 public class StatisticsCalculator {

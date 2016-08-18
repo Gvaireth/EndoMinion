@@ -5,7 +5,7 @@ import java.util.Date;
 
 import org.gvaireth.core.Util;
 
-import com.moomeen.endo2java.model.Sport;
+import org.gvaireth.model.Sport;
 
 public class WorkoutData implements Serializable {
 

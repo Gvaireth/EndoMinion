@@ -2,7 +2,7 @@ package org.gvaireth.model;
 
 import org.gvaireth.core.Util;
 
-import com.moomeen.endo2java.model.Sport;
+import org.gvaireth.model.Sport;
 
 public class WorkoutTotalData implements Comparable<WorkoutTotalData> {
 	private Integer workoutsNo;

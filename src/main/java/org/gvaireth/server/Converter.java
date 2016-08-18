@@ -6,11 +6,13 @@ import org.gvaireth.model.AccountInfoData;
 import org.gvaireth.model.DetailedWorkoutData;
 import org.gvaireth.model.PointData;
 import org.gvaireth.model.WorkoutData;
+import org.gvaireth.model.Sport;
 import org.springframework.stereotype.Component;
 
 import com.moomeen.endo2java.model.AccountInfo;
 import com.moomeen.endo2java.model.DetailedWorkout;
 import com.moomeen.endo2java.model.Point;
+
 import com.moomeen.endo2java.model.Workout;
 
 @Component
@@ -31,7 +33,8 @@ public class Converter {
 			crudData.setSpeedAvg(trimDouble(rawWorkout.getSpeedAvg()));
 		}
 		crudData.setEndomondoId(rawWorkout.getId());
-		crudData.setSportEnum(rawWorkout.getSport());
+		Sport sport = Sport.fromNumber(rawWorkout.getSport().getNumber());
+		crudData.setSportEnum(sport);
 		crudData.setCalories((long) (double) rawWorkout.getCalories());
 		return crudData;
 	}
