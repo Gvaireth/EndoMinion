@@ -60,8 +60,8 @@ public class WorkoutData implements Serializable {
 	}
 
 	public void setSpeedAvg(Double speedAvg) {
-		if (speedAvg == 0) {
-			this.speedAvg = null;
+		if (speedAvg == null) {
+			this.speedAvg = 0D;
 		} else {
 			this.speedAvg = speedAvg;
 		}
@@ -104,8 +104,8 @@ public class WorkoutData implements Serializable {
 	}
 
 	public void setDistance(Double distance) {
-		if (distance == 0) {
-			this.distance = null;
+		if (distance == null) {
+			this.distance = 0D;
 		} else {
 			this.distance = distance;
 		}

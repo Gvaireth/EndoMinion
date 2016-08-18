@@ -29,17 +29,6 @@ Show: <select ng-model="selectedSport" ng-options="sport for sport in sports">
 			<td><a href="" ng-click="orderBy('speedAvg')">Avg speed<br>km/h</a></td>
 			<td><a href="" ng-click="orderBy('speedAvgRank')">Avg speed<br>rank #</a></td>
 			<td><a href="" ng-click="orderBy('sport')">Activity</a></td>
-			
-			<!-- <td>Distance<br>km
-			</td>
-			<td>Distance<br>rank #
-			</td>
-			<td>Calories</td>
-			<td>Avg speed<br>km/h
-			</td>
-			<td>Avg speed<br>rank #
-			</td>
-			<td>Activity</td> -->
 		</tr>
 		<tr ng-repeat="workout in workouts | orderBy:order:reverse | filter:(selectedSport!='All' || '') && {sport:selectedSport}">
 			<td><a ng-click="setCurrentWorkout(workout)" href="#workoutDetails/{{workout.endomondoId}}">{{workout.id}}</a></td>

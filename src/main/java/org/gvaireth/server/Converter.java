@@ -19,19 +19,22 @@ import com.moomeen.endo2java.model.Workout;
 public class Converter {
 	public WorkoutData convertWorkout(Workout rawWorkout) {
 		WorkoutData crudData = new WorkoutData();
-		if (rawWorkout.getDistance() != null) {
-			double dist = trimDouble(rawWorkout.getDistance());
-			crudData.setDistance(dist);
+		Double distance = rawWorkout.getDistance();
+		if (distance != null) {
+			distance = trimDouble(distance);
 		}
+		crudData.setDistance(distance);
 		if (rawWorkout.getStartTime() != null) {
 			crudData.setStartTime(rawWorkout.getStartTime().toDate());
 		}
 		if (rawWorkout.getDuration() != null) {
 			crudData.setDuration(rawWorkout.getDuration().getMillis());
 		}
-		if (rawWorkout.getSpeedAvg() != null) {
-			crudData.setSpeedAvg(trimDouble(rawWorkout.getSpeedAvg()));
+		Double speedAvg = rawWorkout.getSpeedAvg();
+		if (speedAvg != null) {
+			speedAvg = trimDouble(speedAvg);
 		}
+		crudData.setSpeedAvg(speedAvg);
 		crudData.setEndomondoId(rawWorkout.getId());
 		Sport sport = Sport.fromNumber(rawWorkout.getSport().getNumber());
 		crudData.setSportEnum(sport);

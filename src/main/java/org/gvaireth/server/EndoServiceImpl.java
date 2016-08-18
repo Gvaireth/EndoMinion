@@ -10,6 +10,7 @@ import javax.servlet.ServletContext;
 import org.gvaireth.model.AccountInfoData;
 import org.gvaireth.model.DetailedWorkoutData;
 import org.gvaireth.model.PrefetchDataStatus;
+import org.gvaireth.model.Sport;
 import org.gvaireth.model.StatisticsData;
 import org.gvaireth.model.WorkoutData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,6 @@ import org.springframework.stereotype.Service;
 
 import com.moomeen.endo2java.model.AccountInfo;
 import com.moomeen.endo2java.model.DetailedWorkout;
-import org.gvaireth.model.Sport;
 import com.moomeen.endo2java.model.Workout;
 
 @Service("endoservice")
