@@ -4,9 +4,9 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.gvaireth.core.Application;
 import org.gvaireth.core.SessionAttributes;
 import org.gvaireth.core.Util;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.moomeen.endo2java.EndomondoSession;
@@ -22,10 +22,10 @@ public class EndomondoDaoImpl implements EndomondoDao {
 	private List<Workout> workouts;
 	private AccountInfo accountInfo;
 
-	@Value("${endo.email}")
+	// @Value("${endo.email}")
 	private String endoEmail;
 
-	@Value("${endo.pass}")
+	// @Value("${endo.pass}")
 	private String endoPass;
 
 	public EndomondoDaoImpl() {
@@ -43,18 +43,20 @@ public class EndomondoDaoImpl implements EndomondoDao {
 
 	public void fetchWorkouts() {
 
-		System.out.println("fetching workouts for " + endoEmail);
+		System.out.println("fetching workouts...");
 		EndomondoSession endomondoSession;
 		try {
 			endomondoSession = getEndomondoSession();
 			endomondoSession.login();
 			workouts = endomondoSession.getWorkouts(1000);
+			System.out.println("fetched workouts for " + endoEmail);
 		} catch (InvocationException e) {
 			System.out.println("fetchWorkouts fuckup " + e);
 		}
 	}
 
 	public EndomondoSession getEndomondoSession() throws LoginException {
+		init();
 		HttpSession httpSession = Util.session();
 		EndomondoSession endomondoSession = (EndomondoSession) httpSession
 				.getAttribute(SessionAttributes.ENDOMONDO_SESSION.getName());
@@ -95,5 +97,10 @@ public class EndomondoDaoImpl implements EndomondoDao {
 
 		}
 		return accountInfo;
+	}
+
+	public void init() {
+		endoEmail = Application.ENDO_EMAIL;
+		endoPass = Application.ENDO_PASS;
 	}
 }
