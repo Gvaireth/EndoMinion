@@ -1,8 +1,7 @@
-package org.gvaireth.model;
+package org.gvaireth.endominion.model;
 
-import org.gvaireth.core.Util;
-
-import org.gvaireth.model.Sport;
+import org.gvaireth.endominion.core.Util;
+import org.gvaireth.endominion.model.Sport;
 
 public class WorkoutTotalData implements Comparable<WorkoutTotalData> {
 	private Integer workoutsNo;

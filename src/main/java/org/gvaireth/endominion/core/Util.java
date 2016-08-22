@@ -1,4 +1,4 @@
-package org.gvaireth.core;
+package org.gvaireth.endominion.core;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,12 +1,12 @@
-package org.gvaireth.server;
+package org.gvaireth.endominion.server;
 
 import java.util.ArrayList;
 
-import org.gvaireth.model.AccountInfoData;
-import org.gvaireth.model.DetailedWorkoutData;
-import org.gvaireth.model.PointData;
-import org.gvaireth.model.WorkoutData;
-import org.gvaireth.model.Sport;
+import org.gvaireth.endominion.model.AccountInfoData;
+import org.gvaireth.endominion.model.DetailedWorkoutData;
+import org.gvaireth.endominion.model.PointData;
+import org.gvaireth.endominion.model.Sport;
+import org.gvaireth.endominion.model.WorkoutData;
 import org.springframework.stereotype.Component;
 
 import com.moomeen.endo2java.model.AccountInfo;

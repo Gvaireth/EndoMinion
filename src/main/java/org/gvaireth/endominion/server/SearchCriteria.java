@@ -1,6 +1,6 @@
-package org.gvaireth.server;
+package org.gvaireth.endominion.server;
 
-import org.gvaireth.model.Timespan;
+import org.gvaireth.endominion.model.Timespan;
 
 public class SearchCriteria {
 	private Timespan timespan = Timespan.ALL;

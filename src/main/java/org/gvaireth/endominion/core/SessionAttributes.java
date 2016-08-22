@@ -1,4 +1,4 @@
-package org.gvaireth.core;
+package org.gvaireth.endominion.core;
 
 public enum SessionAttributes {
 	ENDOMONDO_SESSION("endomondoSession");

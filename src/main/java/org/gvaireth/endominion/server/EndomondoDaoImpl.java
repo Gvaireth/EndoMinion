@@ -1,12 +1,12 @@
-package org.gvaireth.server;
+package org.gvaireth.endominion.server;
 
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.gvaireth.core.Application;
-import org.gvaireth.core.SessionAttributes;
-import org.gvaireth.core.Util;
+import org.gvaireth.endominion.core.EndoMinionApplication;
+import org.gvaireth.endominion.core.SessionAttributes;
+import org.gvaireth.endominion.core.Util;
 import org.springframework.stereotype.Component;
 
 import com.moomeen.endo2java.EndomondoSession;
@@ -100,7 +100,7 @@ public class EndomondoDaoImpl implements EndomondoDao {
 	}
 
 	public void init() {
-		endoEmail = Application.ENDO_EMAIL;
-		endoPass = Application.ENDO_PASS;
+		endoEmail = EndoMinionApplication.ENDO_EMAIL;
+		endoPass = EndoMinionApplication.ENDO_PASS;
 	}
 }

@@ -1,4 +1,4 @@
-package org.gvaireth.server;
+package org.gvaireth.endominion.server;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,13 +9,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.gvaireth.model.StatisticsData;
-import org.gvaireth.model.WorkoutData;
-import org.gvaireth.model.WorkoutTotalData;
+import org.gvaireth.endominion.model.Sport;
+import org.gvaireth.endominion.model.StatisticsData;
+import org.gvaireth.endominion.model.WorkoutData;
+import org.gvaireth.endominion.model.WorkoutTotalData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import org.gvaireth.model.Sport;
 
 @Component
 public class StatisticsCalculator {
