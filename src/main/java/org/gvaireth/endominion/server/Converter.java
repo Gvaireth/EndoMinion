@@ -6,6 +6,7 @@ import org.gvaireth.endominion.model.AccountInfoData;
 import org.gvaireth.endominion.model.DetailedWorkoutData;
 import org.gvaireth.endominion.model.PointData;
 import org.gvaireth.endominion.model.Sport;
+import org.gvaireth.endominion.model.Weather;
 import org.gvaireth.endominion.model.WorkoutData;
 import org.springframework.stereotype.Component;
 
@@ -47,7 +48,7 @@ public class Converter {
 		String feedStory = rawDetailedWorkout.getFeedStory();
 		feedStory = feedStory.replace("<0>", "").replace("</0>", "");
 		converted.setFeedStory(feedStory);
-		converted.setWeatherType(rawDetailedWorkout.getWeatherType());
+		converted.setWeatherType(Weather.fromNumber(rawDetailedWorkout.getWeatherType()));
 		converted.setPoints(new ArrayList<>());
 		if (rawDetailedWorkout.getPoints() != null) {
 			for (Point rawPoint : rawDetailedWorkout.getPoints()) {
