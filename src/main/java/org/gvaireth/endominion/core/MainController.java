@@ -1,13 +1,13 @@
-package org.gvaireth.core;
+package org.gvaireth.endominion.core;
 
 import java.util.List;
 
-import org.gvaireth.model.AccountInfoData;
-import org.gvaireth.model.DetailedWorkoutData;
-import org.gvaireth.model.PrefetchDataStatus;
-import org.gvaireth.model.StatisticsData;
-import org.gvaireth.model.WorkoutData;
-import org.gvaireth.server.EndoService;
+import org.gvaireth.endominion.model.AccountInfoData;
+import org.gvaireth.endominion.model.DetailedWorkoutData;
+import org.gvaireth.endominion.model.PrefetchDataStatus;
+import org.gvaireth.endominion.model.StatisticsData;
+import org.gvaireth.endominion.model.WorkoutData;
+import org.gvaireth.endominion.server.EndoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

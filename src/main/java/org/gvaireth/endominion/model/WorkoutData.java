@@ -1,11 +1,10 @@
-package org.gvaireth.model;
+package org.gvaireth.endominion.model;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import org.gvaireth.core.Util;
-
-import org.gvaireth.model.Sport;
+import org.gvaireth.endominion.core.Util;
+import org.gvaireth.endominion.model.Sport;
 
 public class WorkoutData implements Serializable {
 

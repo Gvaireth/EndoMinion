@@ -1,4 +1,4 @@
-package org.gvaireth.server;
+package org.gvaireth.endominion.server;
 
 import java.util.List;
 

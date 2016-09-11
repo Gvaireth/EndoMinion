@@ -1,4 +1,4 @@
-package org.gvaireth.model;
+package org.gvaireth.endominion.model;
 
 public class PrefetchDataStatus {
 	private long workoutsFetched;

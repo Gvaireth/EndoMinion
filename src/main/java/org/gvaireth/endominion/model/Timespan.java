@@ -1,4 +1,4 @@
-package org.gvaireth.model;
+package org.gvaireth.endominion.model;
 
 public enum Timespan {
 	ALL, YEAR, MONTH, THIRTYDAYS;

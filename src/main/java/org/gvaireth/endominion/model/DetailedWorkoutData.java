@@ -1,4 +1,4 @@
-package org.gvaireth.model;
+package org.gvaireth.endominion.model;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,16 +10,16 @@ public class DetailedWorkoutData implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Integer weatherType;
+	private Weather weatherType;
 	private String feedStory;
 	private List<PointData> points;
 	private WorkoutData basicWorkoutData;
 
-	public Integer getWeatherType() {
+	public Weather getWeatherType() {
 		return weatherType;
 	}
 
-	public void setWeatherType(Integer weatherType) {
+	public void setWeatherType(Weather weatherType) {
 		this.weatherType = weatherType;
 	}
 
@@ -51,6 +51,10 @@ public class DetailedWorkoutData implements Serializable {
 
 	public void setBasicWorkoutData(WorkoutData basicWorkoutData) {
 		this.basicWorkoutData = basicWorkoutData;
+	}
+
+	public String getWeatherDescription() {
+		return weatherType.getDescription();
 	}
 
 }
